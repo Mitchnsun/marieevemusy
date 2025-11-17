@@ -13,9 +13,9 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "15.5.3",
-    "react": "19.1.1",
-    "react-dom": "19.1.1"
+    "next": "15.5.6",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
   },
   "engines": {
     "node": ">=22"
@@ -23,15 +23,15 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.35.0",
-    "@next/eslint-plugin-next": "^16.0.3",
+    "@next/eslint-plugin-next": "^15.5.6",
     "@tailwindcss/postcss": "^4.1.13",
-    "@types/node": "^22.18.1",
+    "@types/node": "^22.19.1",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
     "eslint": "^9.35.0",
-    "eslint-config-next": "^15.5.2",
+    "eslint-config-next": "^15.5.6",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",

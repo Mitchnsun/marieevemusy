@@ -1,18 +1,32 @@
 import js from "@eslint/js";
-import typescriptEslint from "typescript-eslint";
+import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
+import { FlatCompat } from "@eslint/eslintrc";
 import importPlugin from "eslint-plugin-import";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import prettier from "eslint-plugin-prettier";
-import reactHooks from "eslint-plugin-react-hooks";
 import security from "eslint-plugin-security";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
-export default [
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+});
+
+const config = [
   js.configs.recommended,
-  ...typescriptEslint.configs.recommended,
+  ...compat.extends("next/core-web-vitals"),
+  ...compat.config({
+    extends: ["prettier"],
+  }),
   {
     ignores: [
       "node_modules/**",
@@ -31,24 +45,43 @@ export default [
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: {
-      import: importPlugin,
-      "jsx-a11y": jsxA11y,
+      "@typescript-eslint": typescriptEslint,
       prettier: prettier,
-      "react-hooks": reactHooks,
-      security: security,
-      "simple-import-sort": simpleImportSort,
-      sonarjs: sonarjs,
+      import: importPlugin,
       unicorn: unicorn,
       "unused-imports": unusedImports,
+      "simple-import-sort": simpleImportSort,
+      sonarjs: sonarjs,
+      security: security,
+      "jsx-a11y": jsxA11y,
+    },
+    languageOptions: {
+      parser: tsParser,
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        console: "readonly",
+        process: "readonly",
+        Buffer: "readonly",
+        __dirname: "readonly",
+        __filename: "readonly",
+        exports: "writable",
+        module: "writable",
+        require: "readonly",
+        global: "readonly",
+        window: "readonly",
+        document: "readonly",
+      },
     },
     rules: {
       // TypeScript rules
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-explicit-any": "warn",
-
+      
       // General rules
       "prefer-const": "error",
       "no-var": "error",
+      "no-undef": "off", // TypeScript handles this
 
       // Prettier integration
       "prettier/prettier": "error",
@@ -78,3 +111,5 @@ export default [
     },
   },
 ];
+
+export default config;
