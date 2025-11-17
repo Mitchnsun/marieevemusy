@@ -1,17 +1,17 @@
-# Copilot Instructions for Marie-Ève Musy Website
+# Copilot Instructions for Marie-Eve Musy Website
 
 ## 🎯 Project Overview
 
-This is the professional website for Marie-Ève Musy, a journalist and actress based in Geneva. The site showcases her profile, TV presenting work in Switzerland, demos, career path, and contact information.
+This is the professional website for Marie-Eve Musy, a journalist and actress based in Geneva. The site showcases her profile, TV presenting work in Switzerland, demos, career path, and contact information.
 
 ## 🏗️ Architecture & Technology Stack
 
 ### Core Technologies
 
-- **Framework**: Next.js 15.5.3 with App Router and Turbopack
+- **Framework**: Next.js 16.0.3 with App Router and Turbopack (enabled by default)
 - **Language**: TypeScript 5.9.2 with strict configuration
 - **Styling**: Tailwind CSS 4.1.13
-- **Runtime**: React 19.1.1
+- **Runtime**: React 19.2.0
 - **Package Manager**: Yarn 4.11.0
 
 ### Development Tools
@@ -93,8 +93,8 @@ Imports should be organized in this order:
 
 ### Available Scripts
 
-- `yarn dev` - Development server with Turbopack
-- `yarn build` - Production build
+- `yarn dev` - Development server (Turbopack enabled by default)
+- `yarn build` - Production build (Turbopack enabled by default)
 - `yarn start` - Start production server
 - `yarn lint` - Run ESLint checks
 - `yarn lint:fix` - Auto-fix ESLint issues
@@ -184,7 +184,7 @@ Imports should be organized in this order:
 
 ### Professional Context
 
-- **Marie-Ève Musy**: Journalist and actress based in Geneva
+- **Marie-Eve Musy**: Journalist and actress based in Geneva
 - **Focus**: TV presenting work in Switzerland
 - **Key Content**: Professional demos, career highlights, contact information
 - **Target Audience**: Media professionals, potential clients, recruiters, general public
@@ -232,4 +232,4 @@ Imports should be organized in this order:
 
 ---
 
-Remember: This project represents a professional's public presence. Maintain professionalism, ensure all changes enhance the user experience, and prioritize the clear presentation of Marie-Ève Musy's work and achievements.
+Remember: This project represents a professional's public presence. Maintain professionalism, ensure all changes enhance the user experience, and prioritize the clear presentation of Marie-Eve Musy's work and achievements.

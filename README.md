@@ -1,17 +1,17 @@
-# Marie-Ève Musy
+# Marie-Eve Musy
 
-Profil professionnel de Marie-Ève Musy, journaliste et comédienne à Genève. Présentatrice TV en Suisse : démos, parcours, prestations et prise de contact.
+Profil professionnel de Marie-Eve Musy, journaliste et comédienne à Genève. Présentatrice TV en Suisse : démos, parcours, prestations et prise de contact.
 
 ## 📖 Description
 
-Site web moderne et élégant développé avec Next.js pour présenter le profil professionnel de Marie-Ève Musy, journaliste et comédienne basée à Genève. Le site permet aux visiteurs de découvrir son parcours, ses prestations en tant que présentatrice TV en Suisse, et d'accéder à ses démos.
+Site web moderne et élégant développé avec Next.js pour présenter le profil professionnel de Marie-Eve Musy, journaliste et comédienne basée à Genève. Le site permet aux visiteurs de découvrir son parcours, ses prestations en tant que présentatrice TV en Suisse, et d'accéder à ses démos.
 
 ## 🚀 Technologies utilisées
 
-- **Framework** : [Next.js 15.5.3](https://nextjs.org/) avec Turbopack
+- **Framework** : [Next.js 16.0.3](https://nextjs.org/) avec Turbopack (activé par défaut)
 - **Langage** : TypeScript 5.9.2
 - **Styling** : [Tailwind CSS 4.1.13](https://tailwindcss.com/)
-- **Runtime** : React 19.1.1
+- **Runtime** : React 19.2.0
 - **Gestionnaire de paquets** : Yarn 4.11.0
 - **Linting** : ESLint avec configuration Next.js + plugins avancés
 - **Formatage** : Prettier avec support TailwindCSS
@@ -39,8 +39,8 @@ Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
 
 ### Scripts disponibles
 
-- `yarn dev` - Lance le serveur de développement avec Turbopack
-- `yarn build` - Compile l'application pour la production
+- `yarn dev` - Lance le serveur de développement (Turbopack activé par défaut)
+- `yarn build` - Compile l'application pour la production (Turbopack activé par défaut)
 - `yarn start` - Lance l'application en mode production
 - `yarn lint` - Vérifie le code avec ESLint
 - `yarn lint:fix` - Corrige automatiquement les erreurs ESLint

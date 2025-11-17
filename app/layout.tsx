@@ -5,7 +5,7 @@ import type { Metadata, Viewport } from "next";
 export const metadata: Metadata = {
   title: "Marie-Eve Musy",
   description:
-    "Profil de Marie‑Ève Musy, journaliste et comédienne à Genève. Présentatrice TV en Suisse: démos, parcours, prestations et prise de contact",
+    "Profil de Marie-Eve Musy, journaliste et comédienne à Genève. Présentatrice TV en Suisse: démos, parcours, prestations et prise de contact",
 };
 
 export const viewport: Viewport = {

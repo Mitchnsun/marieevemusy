@@ -77,7 +77,7 @@ const config = [
       // TypeScript rules
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-explicit-any": "warn",
-      
+
       // General rules
       "prefer-const": "error",
       "no-var": "error",
