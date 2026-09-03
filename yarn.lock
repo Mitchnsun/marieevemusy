@@ -3617,6 +3617,9 @@ __metadata:
     tailwindcss: "npm:^4.3.3"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.69.0"
+  dependenciesMeta:
+    unrs-resolver:
+      built: true
   languageName: unknown
   linkType: soft
 
