@@ -1,1 +1,19 @@
+/**
+ * Brand color tokens (`brand-*`), audited from the previous version of the site.
+ * None of these match a default Tailwind palette value, so they are declared
+ * as custom theme tokens instead of approximated with `gray-*`, `blue-*`, etc.
+ * Reuse these classes (e.g. `bg-brand-blue-light text-brand-teal` for buttons)
+ * rather than reintroducing default Tailwind colors or hardcoded hex values.
+ */
 @import "tailwindcss";
+
+@theme {
+  --color-brand-teal: #124c5d;
+  --color-brand-blue-light: #e2ebff;
+  --color-brand-navy: #081f31;
+  --color-brand-blue-muted: #bbd2e0;
+  --color-brand-gray-900: #303133;
+  --color-brand-gray-500: #72777c;
+  --color-brand-gray-200: #eaeaea;
+  --color-brand-gray-50: #f7f7f7;
+}
