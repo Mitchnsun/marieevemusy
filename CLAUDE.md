@@ -21,7 +21,7 @@ Content priority order: professional demos (video showcases) → biography/parco
 
 There is no test runner configured — don't suggest `yarn test`. Before finishing a change, run `yarn lint && yarn type-check`.
 
-Requires Node 22+ (`.nvmrc` pins `22.14`) and Yarn 4.11.0 (`nodeLinker: node-modules`, not PnP).
+Requires Node 24+ (`.nvmrc` pins `24.20.0`) and Yarn 4.18.0 (`nodeLinker: node-modules`, not PnP).
 
 ## Stack & layout
 

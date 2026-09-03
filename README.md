@@ -8,11 +8,11 @@ Site web moderne et élégant développé avec Next.js pour présenter le profil
 
 ## 🚀 Technologies utilisées
 
-- **Framework** : [Next.js 16.0.3](https://nextjs.org/) avec Turbopack (activé par défaut)
-- **Langage** : TypeScript 5.9.2
-- **Styling** : [Tailwind CSS 4.1.13](https://tailwindcss.com/)
-- **Runtime** : React 19.2.0
-- **Gestionnaire de paquets** : Yarn 4.11.0
+- **Framework** : [Next.js 16.3.4](https://nextjs.org/) avec Turbopack (activé par défaut)
+- **Langage** : TypeScript 6.0.3
+- **Styling** : [Tailwind CSS 4.3.3](https://tailwindcss.com/)
+- **Runtime** : React 19.2.8
+- **Gestionnaire de paquets** : Yarn 4.18.0
 - **Linting** : ESLint avec configuration Next.js + plugins avancés
 - **Formatage** : Prettier avec support TailwindCSS
 
@@ -20,8 +20,8 @@ Site web moderne et élégant développé avec Next.js pour présenter le profil
 
 ### Prérequis
 
-- Node.js (version 22+ recommandée)
-- Yarn 4.11.0
+- Node.js (version 24+ recommandée)
+- Yarn 4.18.0
 
 ### Installation des dépendances
 
@@ -105,7 +105,7 @@ Les classes Tailwind sont automatiquement triées par ordre logique grâce au pl
 
 Configuration avec PostCSS pour un styling moderne et responsive. Le projet utilise :
 
-- **Tailwind CSS 4.1.13** - Framework CSS utility-first
+- **Tailwind CSS 4.3.3** - Framework CSS utility-first
 - **PostCSS** - Transformation CSS moderne
 - Support des variables CSS natives
 - Design système personnalisable

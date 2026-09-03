@@ -1,32 +1,20 @@
 import js from "@eslint/js";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
-import { FlatCompat } from "@eslint/eslintrc";
-import importPlugin from "eslint-plugin-import";
-import jsxA11y from "eslint-plugin-jsx-a11y";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import eslintConfigPrettier from "eslint-config-prettier";
 import prettier from "eslint-plugin-prettier";
 import security from "eslint-plugin-security";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import sonarjs from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
 import unusedImports from "eslint-plugin-unused-imports";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-});
-
+// eslint-config-next already ships as a flat config array (plugins: react, react-hooks,
+// import, jsx-a11y, @next/next, and — for **/*.{ts,tsx} — @typescript-eslint) with its own
+// parser/globals, so it's spread in directly instead of via the legacy FlatCompat bridge.
 const config = [
   js.configs.recommended,
-  ...compat.extends("next/core-web-vitals"),
-  ...compat.config({
-    extends: ["prettier"],
-  }),
+  ...nextCoreWebVitals,
+  eslintConfigPrettier,
   {
     ignores: [
       "node_modules/**",
@@ -40,44 +28,20 @@ const config = [
       ".DS_Store",
       ".yarn/**",
       "next-env.d.ts",
+      ".claude/worktrees/**",
     ],
   },
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: {
-      "@typescript-eslint": typescriptEslint,
       prettier: prettier,
-      import: importPlugin,
       unicorn: unicorn,
       "unused-imports": unusedImports,
       "simple-import-sort": simpleImportSort,
       sonarjs: sonarjs,
       security: security,
-      "jsx-a11y": jsxA11y,
-    },
-    languageOptions: {
-      parser: tsParser,
-      ecmaVersion: "latest",
-      sourceType: "module",
-      globals: {
-        console: "readonly",
-        process: "readonly",
-        Buffer: "readonly",
-        __dirname: "readonly",
-        __filename: "readonly",
-        exports: "writable",
-        module: "writable",
-        require: "readonly",
-        global: "readonly",
-        window: "readonly",
-        document: "readonly",
-      },
     },
     rules: {
-      // TypeScript rules
-      "@typescript-eslint/no-unused-vars": "error",
-      "@typescript-eslint/no-explicit-any": "warn",
-
       // General rules
       "prefer-const": "error",
       "no-var": "error",
@@ -105,9 +69,17 @@ const config = [
       // Security
       "security/detect-object-injection": "off",
 
-      // Accessibility
+      // Accessibility (jsx-a11y plugin registered by eslint-config-next)
       "jsx-a11y/alt-text": "error",
       "jsx-a11y/anchor-is-valid": "warn",
+    },
+  },
+  {
+    // @typescript-eslint plugin is only registered by eslint-config-next for ts/tsx files.
+    files: ["**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-explicit-any": "warn",
     },
   },
 ];
