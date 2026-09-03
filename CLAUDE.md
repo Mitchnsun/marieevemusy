@@ -18,8 +18,13 @@ Content priority order: professional demos (video showcases) → biography/parco
 - `yarn lint` / `yarn lint:fix` — ESLint (flat config)
 - `yarn format` / `yarn format:check` — Prettier
 - `yarn type-check` — `tsc --noEmit`
+- `yarn check` — `yarn lint && yarn type-check`, the pre-flight for any change
 
-There is no test runner configured — don't suggest `yarn test`. Before finishing a change, run `yarn lint && yarn type-check`.
+There is no test runner configured — don't suggest `yarn test`. Before finishing a change, run `yarn check`.
+
+A `pre-commit` hook (Husky + lint-staged) auto-fixes ESLint/Prettier issues on staged files; CI
+(`.github/workflows/ci.yml`) runs `yarn lint`, `yarn type-check`, and `yarn build` on every push and
+PR against `master`.
 
 Requires Node 24+ (`.nvmrc` pins `24.20.0`) and Yarn 4.18.0 (`nodeLinker: node-modules`, not PnP).
 
@@ -33,9 +38,11 @@ Requires Node 24+ (`.nvmrc` pins `24.20.0`) and Yarn 4.18.0 (`nodeLinker: node-m
 
 These fail `yarn lint`, not just review, so treat them as hard requirements:
 
-- `prettier/prettier` is an ESLint error — formatting issues are lint failures. Style: double quotes, semicolons, `printWidth: 120`, trailing commas (`es5`), Tailwind classes auto-sorted by `prettier-plugin-tailwindcss`.
-- `simple-import-sort/imports` and `unused-imports/no-unused-imports` are errors — imports are machine-ordered and unused imports are not allowed; don't hand-order them.
-- `sonarjs/cognitive-complexity` capped at 15; `jsx-a11y/alt-text` is an error; `@typescript-eslint/no-explicit-any` is a warning.
+- `prettier/prettier` is an ESLint error — formatting issues are lint failures. Style: double quotes, semicolons, `printWidth: 120`, trailing commas (`es5`), Tailwind classes auto-sorted by `prettier-plugin-tailwindcss`. `.prettierignore` excludes `.claude/`, `.next/`, `.yarn/`, `yarn.lock`, and `public/*.svg`.
+- `simple-import-sort/imports` and `unused-imports/no-unused-imports` are errors — imports are machine-ordered and unused imports are not allowed; don't hand-order them. `@typescript-eslint/consistent-type-imports` is also an error — use `import type` for type-only imports.
+- `sonarjs/cognitive-complexity` capped at 15, plus a curated subset of sonarjs/unicorn rules for readability (see `eslint.config.mjs`) — not the full rulesets, to avoid noise.
+- Accessibility: `eslint-plugin-jsx-a11y`'s full `recommended` rule set is active (not just the 6 rules `eslint-config-next` wires up by default), with `media-has-caption`, `iframe-has-title`, and `label-has-associated-control` called out as errors given the demo-video and future contact-form content.
+- Type-aware TS linting on `**/*.{ts,tsx}` via `typescript-eslint`'s `projectService`: `no-floating-promises`, `no-misused-promises`, and `await-thenable` are errors — relevant since Server Components are often `async`. `@typescript-eslint/no-explicit-any` is a warning.
 - File naming: `kebab-case` for directories, `PascalCase` for component files, `camelCase` for utility files.
 
 ## Content & language
