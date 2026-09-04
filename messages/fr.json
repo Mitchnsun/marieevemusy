@@ -1,0 +1,33 @@
+{
+  "Layout": {
+    "skipToContent": "Aller au contenu"
+  },
+  "Nav": {
+    "journalisme": "Journalisme",
+    "biographie": "Biographie",
+    "ecriture": "Écriture",
+    "acting": "Acting"
+  },
+  "Footer": {
+    "contactCta": "Vous avez une question, une idée, un projet? On en discute?",
+    "contactCtaEcriture": "Vous avez une question, une idée, un projet? On en discute?",
+    "contactButton": "Contact"
+  },
+  "LanguageSwitcher": {
+    "label": "Changer de langue",
+    "fr": "Français",
+    "en": "Anglais"
+  },
+  "HomePage": {
+    "title": "Journalisme"
+  },
+  "BiographiePage": {
+    "title": "Biographie"
+  },
+  "EcriturePage": {
+    "title": "Écriture"
+  },
+  "ActingPage": {
+    "title": "Acting"
+  }
+}

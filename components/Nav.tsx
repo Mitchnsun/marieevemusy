@@ -1,16 +1,17 @@
 "use client";
 
 import { cn } from "@utils/cn";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
+import { Link, usePathname } from "@/i18n/navigation";
+
 const NAV_LINKS = [
-  { href: "/", label: "Journalisme" },
-  { href: "/biographie", label: "Biographie" },
-  { href: "/ecriture", label: "Écriture" },
-  { href: "/acting", label: "Acting" },
-];
+  { href: "/", key: "journalisme" },
+  { href: "/biographie", key: "biographie" },
+  { href: "/ecriture", key: "ecriture" },
+  { href: "/acting", key: "acting" },
+] as const;
 
 const isCurrentPath = (pathname: string, href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
@@ -21,6 +22,7 @@ const LINK_CLASSES =
 const BAR_CLASSES = "bg-brand-gray-900 h-0.5 w-6 duration-200";
 
 export default function Nav() {
+  const t = useTranslations("Nav");
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
@@ -54,7 +56,7 @@ export default function Nav() {
         className="relative z-50 mx-auto flex h-20 max-w-[1644px] items-center justify-end px-9"
       >
         <ul className="nav:flex hidden items-center gap-1">
-          {NAV_LINKS.map(({ href, label }) => {
+          {NAV_LINKS.map(({ href, key }) => {
             const isCurrent = isCurrentPath(pathname, href);
             return (
               <li key={href} className="first:*:pl-0 last:*:pr-0">
@@ -63,7 +65,7 @@ export default function Nav() {
                   aria-current={isCurrent ? "page" : undefined}
                   className={cn(LINK_CLASSES, "px-3.5", { "text-brand-gray-900/50": isCurrent })}
                 >
-                  {label}
+                  {t(key)}
                 </Link>
               </li>
             );
@@ -93,7 +95,7 @@ export default function Nav() {
         hidden={!isMenuOpen}
         className="nav:hidden bg-brand-gray-50 fixed inset-0 z-40 flex flex-col items-end justify-center gap-8 px-9"
       >
-        {NAV_LINKS.map(({ href, label }) => {
+        {NAV_LINKS.map(({ href, key }) => {
           const isCurrent = isCurrentPath(pathname, href);
           return (
             <Link
@@ -103,7 +105,7 @@ export default function Nav() {
               onClick={() => setIsMenuOpen(false)}
               className={cn(LINK_CLASSES, { "text-brand-gray-900/50": isCurrent })}
             >
-              {label}
+              {t(key)}
             </Link>
           );
         })}
