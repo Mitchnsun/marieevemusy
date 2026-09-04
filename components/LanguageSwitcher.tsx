@@ -20,7 +20,6 @@ export default function LanguageSwitcher() {
             key={availableLocale}
             href={pathname}
             locale={availableLocale}
-            hrefLang={availableLocale}
             aria-current={isCurrent ? "true" : undefined}
             aria-label={t(availableLocale)}
             className={cn("text-brand-blue-light text-sm font-semibold uppercase", {
