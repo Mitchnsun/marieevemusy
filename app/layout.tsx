@@ -1,10 +1,9 @@
 import "./globals.css";
 
+import ContactCta from "@components/ContactCta";
+import Nav from "@components/Nav";
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
-
-import ContactCta from "./components/ContactCta";
-import Nav from "./components/Nav";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

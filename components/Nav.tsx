@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@utils/cn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -16,7 +17,8 @@ const isCurrentPath = (pathname: string, href: string) => (href === "/" ? pathna
 // TODO: switch the links to white (as on marieevemusy.com) once pages
 // have a hero image behind the transparent header.
 const LINK_CLASSES =
-  "text-brand-gray-900 hover:text-brand-gray-900/50 text-[20px] leading-5 font-semibold tracking-[1px] transition-colors duration-200";
+  "text-brand-gray-900 hover:text-brand-gray-900/50 text-xl leading-5 font-semibold tracking-[1px] transition-colors duration-200";
+const BAR_CLASSES = "bg-brand-gray-900 h-0.5 w-6 duration-200";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -49,9 +51,9 @@ export default function Nav() {
     <header ref={headerRef} className="absolute inset-x-0 top-0 z-50">
       <nav
         aria-label="Navigation principale"
-        className="relative z-50 mx-auto flex h-[79px] max-w-[1644px] items-center justify-end px-9"
+        className="relative z-50 mx-auto flex h-20 max-w-[1644px] items-center justify-end px-9"
       >
-        <ul className="nav:flex hidden items-center gap-[5px]">
+        <ul className="nav:flex hidden items-center gap-1">
           {NAV_LINKS.map(({ href, label }) => {
             const isCurrent = isCurrentPath(pathname, href);
             return (
@@ -59,7 +61,7 @@ export default function Nav() {
                 <Link
                   href={href}
                   aria-current={isCurrent ? "page" : undefined}
-                  className={`${LINK_CLASSES} px-3.5 ${isCurrent ? "text-brand-gray-900/50" : ""}`}
+                  className={cn(LINK_CLASSES, "px-3.5", { "text-brand-gray-900/50": isCurrent })}
                 >
                   {label}
                 </Link>
@@ -77,19 +79,9 @@ export default function Nav() {
           // TODO: switch the bars to white together with LINK_CLASSES (see above).
           className="nav:hidden relative flex h-6 w-6 flex-col items-center justify-center gap-1.5"
         >
-          <span
-            className={`bg-brand-gray-900 h-0.5 w-6 transition-transform duration-200 ${
-              isMenuOpen ? "translate-y-2 rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`bg-brand-gray-900 h-0.5 w-6 transition-opacity duration-200 ${isMenuOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`bg-brand-gray-900 h-0.5 w-6 transition-transform duration-200 ${
-              isMenuOpen ? "-translate-y-2 -rotate-45" : ""
-            }`}
-          />
+          <span className={cn(BAR_CLASSES, "transition-transform", { "translate-y-2 rotate-45": isMenuOpen })} />
+          <span className={cn(BAR_CLASSES, "transition-opacity", { "opacity-0": isMenuOpen })} />
+          <span className={cn(BAR_CLASSES, "transition-transform", { "-translate-y-2 -rotate-45": isMenuOpen })} />
         </button>
       </nav>
 
@@ -109,7 +101,7 @@ export default function Nav() {
               href={href}
               aria-current={isCurrent ? "page" : undefined}
               onClick={() => setIsMenuOpen(false)}
-              className={`${LINK_CLASSES} ${isCurrent ? "text-brand-gray-900/50" : ""}`}
+              className={cn(LINK_CLASSES, { "text-brand-gray-900/50": isCurrent })}
             >
               {label}
             </Link>
