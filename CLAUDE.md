@@ -32,7 +32,8 @@ Requires Node 24+ (`.nvmrc` pins `24.20.0`) and Yarn 4.18.0 (`nodeLinker: node-m
 
 - Next.js 16 App Router (`app/`), React 19 Server Components by default — add `"use client"` only where interactivity is actually needed.
 - Tailwind CSS 4 via PostCSS, with **no `tailwind.config.*` file**: `app/globals.css` is just `@import "tailwindcss"`. Theme customization goes in that CSS file (Tailwind 4's CSS-first config), not a JS config.
-- `@/*` path alias resolves to the repo root (there is no `src/` directory).
+- `@/*` path alias resolves to the repo root (there is no `src/` directory); `@components/*` resolves to `components/` (shared components live outside `app/`, not in `app/components/`); `@utils/*` resolves to `utils/`.
+- Conditional/merged Tailwind classes go through `cn()` (`utils/cn.ts`, clsx + tailwind-merge) — never raw template-literal string concatenation. Prefer clsx's object form for conditional classes, e.g. `cn(BASE_CLASSES, { "text-brand-gray-900/50": isCurrent })`, not `isCurrent && "text-brand-gray-900/50"`. One util per file under `utils/`, named after the util (no catch-all `utils.ts`).
 
 ## Conventions enforced by tooling
 

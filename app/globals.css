@@ -16,4 +16,7 @@
   --color-brand-gray-50: #f7f7f7;
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  /* Matches the desktop/mobile nav breakpoint on marieevemusy.com. */
+  --breakpoint-nav: 960px;
 }
