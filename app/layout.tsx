@@ -1,6 +1,13 @@
 import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Marie-Eve Musy",
@@ -20,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body className="flex min-h-screen flex-col bg-zinc-50 text-zinc-900 antialiased">
+    <html lang="fr" className={montserrat.variable}>
+      <body className="bg-brand-gray-50 text-brand-gray-900 flex min-h-screen flex-col antialiased">
         <main id="main-content" className="flex-1">
           {children}
         </main>

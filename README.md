@@ -110,6 +110,29 @@ Configuration avec PostCSS pour un styling moderne et responsive. Le projet util
 - Support des variables CSS natives
 - Design système personnalisable
 
+#### Couleurs de marque
+
+Les couleurs de marque du site sont déclarées comme tokens de thème custom dans `app/globals.css` (bloc `@theme`), préfixées par `brand-` pour bien les distinguer de la palette Tailwind par défaut. Aucune ne correspond à une valeur Tailwind par défaut, elles doivent donc toujours être utilisées via ces classes plutôt qu'avec des couleurs Tailwind standards ou des valeurs hex en dur :
+
+| Token              | Hex       | Classes utilitaires                                 |
+| ------------------ | --------- | --------------------------------------------------- |
+| `brand-teal`       | `#124c5d` | `bg-brand-teal`, `text-brand-teal`, ...             |
+| `brand-blue-light` | `#e2ebff` | `bg-brand-blue-light`, `text-brand-blue-light`, ... |
+| `brand-navy`       | `#081f31` | `bg-brand-navy`, `text-brand-navy`, ...             |
+| `brand-blue-muted` | `#bbd2e0` | `bg-brand-blue-muted`, `text-brand-blue-muted`, ... |
+| `brand-gray-900`   | `#303133` | `bg-brand-gray-900`, `text-brand-gray-900`, ...     |
+| `brand-gray-500`   | `#72777c` | `bg-brand-gray-500`, `text-brand-gray-500`, ...     |
+| `brand-gray-200`   | `#eaeaea` | `border-brand-gray-200`, `bg-brand-gray-200`, ...   |
+| `brand-gray-50`    | `#f7f7f7` | `bg-brand-gray-50`, ...                             |
+
+Usages recommandés :
+
+- Fond de page : `bg-brand-gray-50`
+- Texte principal : `text-brand-gray-900`
+- Texte secondaire / légendes : `text-brand-gray-500`
+- Bordures / séparateurs : `border-brand-gray-200`
+- Boutons (Écouter, Visionner, Contact et tout futur bouton du même style) : `bg-brand-blue-light text-brand-teal`
+
 ### TypeScript
 
 Configuration stricte pour un développement robuste avec vérification des types complète.
