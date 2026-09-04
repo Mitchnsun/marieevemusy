@@ -3,6 +3,9 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 
+import ContactCta from "./components/ContactCta";
+import Nav from "./components/Nav";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
@@ -29,9 +32,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className={montserrat.variable}>
       <body className="bg-brand-gray-50 text-brand-gray-900 flex min-h-screen flex-col antialiased">
+        <Nav />
         <main id="main-content" className="flex-1">
           {children}
         </main>
+        <ContactCta />
       </body>
     </html>
   );
