@@ -1,0 +1,33 @@
+{
+  "Layout": {
+    "skipToContent": "Skip to content"
+  },
+  "Nav": {
+    "journalisme": "Journalism",
+    "biographie": "Biography",
+    "ecriture": "Writing",
+    "acting": "Acting"
+  },
+  "Footer": {
+    "contactCta": "Have a question, an idea, a project? Let's talk?",
+    "contactCtaEcriture": "Have a question, an idea, a project? Let's talk?",
+    "contactButton": "Contact"
+  },
+  "LanguageSwitcher": {
+    "label": "Change language",
+    "fr": "French",
+    "en": "English"
+  },
+  "HomePage": {
+    "title": "Journalism"
+  },
+  "BiographiePage": {
+    "title": "Biography"
+  },
+  "EcriturePage": {
+    "title": "Writing"
+  },
+  "ActingPage": {
+    "title": "Acting"
+  }
+}
