@@ -1,4 +1,6 @@
+import ContactCta from "@components/ContactCta";
 import Hero from "@components/Hero";
+import IntroBand from "@components/IntroBand";
 import MediaGallery from "@components/MediaGallery";
 import ShowSection from "@components/ShowSection";
 import type { Metadata } from "next";
@@ -26,16 +28,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("HomePage");
+  const tFooter = await getTranslations("Footer");
 
   return (
     <>
       <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} />
 
-      <section className="bg-brand-blue-muted">
-        <div className="nav:py-36 max-w-page mx-auto px-8 py-12">
-          <h2 className="text-brand-teal max-w-225 text-4xl leading-10.5 font-bold">{t("intro")}</h2>
-        </div>
-      </section>
+      <IntroBand text={t("intro")} className="bg-brand-blue-muted" />
 
       <ShowSection
         title={t("midiBascule.title")}
@@ -66,6 +65,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           { src: galerie4, alt: t("gallery.alt4") },
         ]}
       />
+
+      <ContactCta text={tFooter("contactCta")} />
     </>
   );
 }
