@@ -19,7 +19,40 @@
     "en": "Anglais"
   },
   "HomePage": {
-    "title": "Journalisme"
+    "title": "Marie-Eve Musy",
+    "heroAlt": "Marie-Eve Musy, journaliste et présentatrice",
+    "intro": "Je présente deux émissions culturelles radiophoniques. En plus de l’animation, je gère une grande partie de la production (recherche de sujets, définition de l’angle, choix des invité.e.s et prise de contact).",
+    "midiBascule": {
+      "title": "Midi Bascule",
+      "lead": "L’émission est diffusée en direct chaque vendredi de 12h à 13h sur les ondes de Radio Vostok, avant d’être mise en ligne sur radiobascule.ch pour une ré-écoute en podcast.",
+      "paragraphs": [
+        "En 2020, le Théâtre Forum Meyrin s’allie avec la radio indépendante Vostok pour lancer la plateforme de podcasts Radio Bascule. Cette dernière suscite un tel engouement, qu’un an plus tard, une émission hebdomadaire culturelle voit le jour. Elle est diffusée en direct sur les ondes de Vostok et s’appelle Midi Bascule.",
+        "Dès son lancement, je participe à l’aventure. D’abord chroniqueuse, j’écrivais des billets psycho-humoristiques sur les émotions, puis les lisais en direct.",
+        "Après six mois à ce poste, on m’a proposé de reprendre la présentation, ce que j’ai accepté avec joie. Entourée de deux chroniqueur.euse.s, je reçois deux ou trois invité.e.s, selon les épisodes.",
+        "L’un.e nous accompagne durant toute l’heure, en studio, les autres nous retrouvent quelques minutes, par téléphone ou par messages vocaux. Nous explorons ensemble – parfois avec un reportage en prime – un chambardement* culturel en cours."
+      ],
+      "note": "* également appelé «point de bascule» ;)",
+      "ctaLabel": "Écouter",
+      "ctaHref": "https://radiobascule.ch/midi-bascule",
+      "imageAlt": "Marie-Eve Musy anime Midi Bascule dans les studios de Radio Vostok"
+    },
+    "cultureMag": {
+      "title": "Culture Mag’",
+      "lead": "Le rendez-vous mensuel est diffusé en version audio sur Radio Lac et en vidéo sur One TV. Il est aussi disponible en ligne pour un visionnement en différé.",
+      "paragraphs": [
+        "En septembre 2022, la Ville de Genève lance sa nouvelle émission culturelle en partenariat avec Media One. Ce groupe, pour lequel j’avais déjà eu l’occasion de créer des chroniques estivales, me confie le rôle de présentatrice.",
+        "Nous passons en revue l’actualité régionale et proposons une discussion en plateau avec des intervenant.e.s. Cet agenda amélioré est également agrémenté de deux capsules régulières, réalisées par le Musée d’art et d’histoire et les Bibliothèques Municipales de Genève."
+      ],
+      "ctaLabel": "Visionner",
+      "ctaHref": "https://www.onetv.ch/emissions/replay/culture-mag/",
+      "imageAlt": "Marie-Eve Musy présente Culture Mag’ sur le plateau de One TV"
+    },
+    "gallery": {
+      "alt1": "Marie-Eve Musy en tournage pour Culture Mag’",
+      "alt2": "Marie-Eve Musy en interview pour une émission culturelle",
+      "alt3": "Marie-Eve Musy en studio de radio",
+      "alt4": "Marie-Eve Musy sur le plateau d’une émission culturelle"
+    }
   },
   "BiographiePage": {
     "title": "Biographie"

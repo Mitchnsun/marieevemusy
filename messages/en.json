@@ -19,7 +19,40 @@
     "en": "English"
   },
   "HomePage": {
-    "title": "Journalism"
+    "title": "Marie-Eve Musy",
+    "heroAlt": "Marie-Eve Musy, journalist and TV presenter",
+    "intro": "I host two cultural radio shows. Beyond presenting, I also handle much of the production work (finding topics, defining the angle, choosing guests and reaching out to them).",
+    "midiBascule": {
+      "title": "Midi Bascule",
+      "lead": "The show airs live every Friday from noon to 1pm on Radio Vostok, before going online on radiobascule.ch as a podcast.",
+      "paragraphs": [
+        "In 2020, the Théâtre Forum Meyrin teamed up with independent radio station Vostok to launch the Radio Bascule podcast platform. It proved so popular that, a year later, a weekly cultural show was born. Broadcast live on Vostok, it's called Midi Bascule.",
+        "I've been part of the adventure since it launched. At first as a columnist, I wrote psycho-humorous pieces about emotions, then read them live on air.",
+        "After six months in that role, I was offered the chance to take over as host, which I happily accepted. Alongside two columnists, I welcome two or three guests, depending on the episode.",
+        "One guest joins us in the studio for the full hour, while the others check in for a few minutes by phone or voice message. Together – sometimes with a feature report thrown in – we explore a cultural shift currently underway."
+      ],
+      "note": "* also known as a «point de bascule», or turning point ;)",
+      "ctaLabel": "Listen",
+      "ctaHref": "https://radiobascule.ch/midi-bascule",
+      "imageAlt": "Marie-Eve Musy hosting Midi Bascule in the Radio Vostok studios"
+    },
+    "cultureMag": {
+      "title": "Culture Mag’",
+      "lead": "This monthly show airs in audio on Radio Lac and in video on One TV. It's also available online for catch-up viewing.",
+      "paragraphs": [
+        "In September 2022, the City of Geneva launched its new cultural show in partnership with Media One. This group, for whom I had already produced summer segments, entrusted me with the role of host.",
+        "We review regional news and host a panel discussion with guests. This enhanced agenda also features two recurring segments produced by the Musée d'art et d'histoire and the Geneva Municipal Libraries."
+      ],
+      "ctaLabel": "Watch",
+      "ctaHref": "https://www.onetv.ch/emissions/replay/culture-mag/",
+      "imageAlt": "Marie-Eve Musy presenting Culture Mag’ on the One TV set"
+    },
+    "gallery": {
+      "alt1": "Marie-Eve Musy filming for Culture Mag’",
+      "alt2": "Marie-Eve Musy interviewing a guest for a cultural show",
+      "alt3": "Marie-Eve Musy in a radio studio",
+      "alt4": "Marie-Eve Musy on the set of a cultural show"
+    }
   },
   "BiographiePage": {
     "title": "Biography"

@@ -15,11 +15,9 @@ const NAV_LINKS = [
 
 const isCurrentPath = (pathname: string, href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
-// TODO: switch the links to white (as on marieevemusy.com) once pages
-// have a hero image behind the transparent header.
 const LINK_CLASSES =
-  "text-brand-gray-900 hover:text-brand-gray-900/50 text-xl leading-5 font-semibold tracking-[1px] transition-colors duration-200";
-const BAR_CLASSES = "bg-brand-gray-900 h-0.5 w-6 duration-200";
+  "text-white hover:text-white/50 text-xl leading-5 font-semibold tracking-[1px] transition-colors duration-200";
+const BAR_CLASSES = "bg-white h-0.5 w-6 duration-200";
 
 export default function Nav() {
   const t = useTranslations("Nav");
@@ -53,7 +51,7 @@ export default function Nav() {
     <header ref={headerRef} className="absolute inset-x-0 top-0 z-50">
       <nav
         aria-label="Navigation principale"
-        className="relative z-50 mx-auto flex h-20 max-w-[1644px] items-center justify-end px-9"
+        className="max-w-page relative z-50 mx-auto flex h-20 items-center justify-end px-9"
       >
         <ul className="nav:flex hidden items-center gap-1">
           {NAV_LINKS.map(({ href, key }) => {
@@ -63,7 +61,7 @@ export default function Nav() {
                 <Link
                   href={href}
                   aria-current={isCurrent ? "page" : undefined}
-                  className={cn(LINK_CLASSES, "px-3.5", { "text-brand-gray-900/50": isCurrent })}
+                  className={cn(LINK_CLASSES, "px-3.5", { "text-white/50": isCurrent })}
                 >
                   {t(key)}
                 </Link>
@@ -78,7 +76,6 @@ export default function Nav() {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           onClick={() => setIsMenuOpen((open) => !open)}
-          // TODO: switch the bars to white together with LINK_CLASSES (see above).
           className="nav:hidden relative flex h-6 w-6 flex-col items-center justify-center gap-1.5"
         >
           <span className={cn(BAR_CLASSES, "transition-transform", { "translate-y-2 rotate-45": isMenuOpen })} />
@@ -103,7 +100,9 @@ export default function Nav() {
               href={href}
               aria-current={isCurrent ? "page" : undefined}
               onClick={() => setIsMenuOpen(false)}
-              className={cn(LINK_CLASSES, { "text-brand-gray-900/50": isCurrent })}
+              className={cn(LINK_CLASSES, "text-brand-gray-900 hover:text-brand-gray-900/50", {
+                "text-brand-gray-900/50": isCurrent,
+              })}
             >
               {t(key)}
             </Link>
