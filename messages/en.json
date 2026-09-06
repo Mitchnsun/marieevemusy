@@ -10,8 +10,10 @@
   },
   "Footer": {
     "contactCta": "Have a question, an idea, a project? Let's talk?",
-    "contactCtaEcriture": "Have a question, an idea, a project? Let's talk?",
-    "contactButton": "Contact"
+    "contactCtaEcriture": "Want to book the show, or have a project in mind? Let's talk?",
+    "contactButton": "Contact",
+    "copyright": "Copyright ©{year}",
+    "socialLabel": "Social media links"
   },
   "LanguageSwitcher": {
     "label": "Change language",
@@ -55,12 +57,213 @@
     }
   },
   "BiographiePage": {
-    "title": "Biography"
+    "title": "Biography",
+    "heroAlt": "Marie-Eve Musy in a Geneva metro corridor",
+    "lead": "Actress, TV presenter, author and now journalist, I love exploring different fields. My career path has mostly been guided by discovery and new challenges.",
+    "paragraphs": [
+      "Marie-Eve Musy was born and raised in Geneva. The drama classes she started at age 8 led her to perform in professional shows and TV series as a teenager. After completing her baccalaureate, she moved to Paris to train in dramatic arts. On graduating from the Cours Florent, she was selected for the sought-after Prix Olga Horstig.",
+      "On the big screen, she appears in the casts of Opération Casablanca by Laurent Nègre, Bob et Les Sex Pistaches (Yves Matthey) and Les Petits flocons (Joséphine de Meaux). She plays the lead in the short films Myrtille and I swear. On stage, she has notably appeared in Les trois soeurs (directed by Eric Devanthéry), La mère (directed by Pietro Musillo) and Wagner's Ring Cycle staged by the Salzburg Marionette Theatre (in Paris and Brussels).",
+      "She also works in television as an actress (RTS, TF1) and as a presenter. For six years, she hosted shows on the Canal group's first youth channel, where she helped write some of the sketches — her first steps into writing.",
+      "As a recipient of a grant from the Swiss Authors' Society (SSA), she wrote a first hybrid show blending emotion, humour and dance around gender inequality. Jean-Luc Barbezat and Gaspard Boesch co-directed dégenre, in which she stars alongside dancer Vivien Hochstätter. The success of its 2019 Geneva premiere led to a tour.",
+      "Alongside this, she has hosted events such as the Geneva International Film Festival (GIFF) and accompanied the film Salvataggio on its preview tour, with screenings followed by panel discussions.",
+      "In September 2021, Marie-Eve joined the radio show Midi Bascule with psycho-humorous columns. She took over as host of the weekly show in 2022. Since last autumn, she has also presented Culture Mag’ on One TV and Radio Lac."
+    ],
+    "portraitAlt": "Studio portrait of Marie-Eve Musy",
+    "callout": {
+      "title": "Journalism",
+      "text": "Find out more about the shows I currently host.",
+      "ctaLabel": "Learn more",
+      "ctaHref": "/",
+      "imageAlt": "Marie-Eve Musy hosting on a film set"
+    }
   },
   "EcriturePage": {
-    "title": "Writing"
+    "title": "Writing",
+    "heroAlt": "Marie-Eve Musy on stage in the show dégenre",
+    "lead": "As a recipient of a grant from the Swiss Authors' Society, I wrote the show dégenre in 2018. I cherish the freedom of tone that writing offers. I also use my pen to craft sketches and radio columns.",
+    "intro": "In 2018, after more than fifteen years of bringing other people's stories to life, I wanted to write my own text — the show I dreamed of performing, which didn't yet exist. Using my pen gave me a freedom I cherish, and one I keep when writing my columns.",
+    "degenre": {
+      "title": "Dégenre",
+      "lead": "Marie-Eve Musy plays with reversals. She brings her dream man on stage and has fun objectifying him while recounting her own personal stories.",
+      "paragraph": "In search of harmony, she leads us into a reflection on the notion of gender. Between solo performance, duo (two people share the stage but only one speaks), humour and dance, this show is a genuine one-off.",
+      "distributionTitle": "Cast & crew",
+      "distribution": [
+        {
+          "role": "Author, performer, dancer",
+          "name": "Marie-Eve Musy"
+        },
+        {
+          "role": "Dancer",
+          "name": "Vivien Hochstätter"
+        },
+        {
+          "role": "Writing coaches, directors",
+          "name": "Jean-Luc Barbezat, Gaspard Boesch"
+        },
+        {
+          "role": "Choreographer",
+          "name": "Mena Avolio"
+        },
+        {
+          "role": "Technician",
+          "name": "Florian Rime"
+        },
+        {
+          "role": "Voice-over",
+          "name": "Tamara Semelet"
+        }
+      ],
+      "quotes": [
+        {
+          "text": "Delicate, joyful, and full of hope.",
+          "author": "An audience member"
+        },
+        {
+          "text": "As its double-meaning title suggests, dégenre deconstructs stereotypes as much as theatrical forms. Comedy tempers personal anecdotes that reveal the ordinary violence of sexism, while dance sketches out a new balance in relationships between women and men.",
+          "author": "Le Courrier"
+        }
+      ],
+      "links": {
+        "book": {
+          "label": "The book",
+          "href": "https://www.fr.fnac.ch/a15283753/Marie-Eve-Musy-Degenre"
+        },
+        "backstage": {
+          "label": "Behind the scenes",
+          "href": "https://vimeo.com/425430453"
+        },
+        "radioShow": {
+          "label": "Entre nous soit dit",
+          "href": "https://www.rts.ch/play/radio/entre-nous-soit-dit/audio/marie-eve-musy-auteure-interprete-danseuse?id=10644694"
+        },
+        "article": {
+          "label": "Le Courrier article",
+          "href": "https://marieevemusy.com/wp-content/uploads/2023/08/MEM_Le_Courrier_Marie_eve_musy.pdf"
+        }
+      },
+      "coverAlt": "Cover of Marie-Eve Musy's book dégenre"
+    },
+    "chroniques": {
+      "title": "The columns",
+      "lead": "Talking about your emotions is supposedly good for your health. So I decided to list them and dissect them, one by one (sometimes they even come in pairs!).",
+      "paragraphs": [
+        "I naturally add a few personal experiences of my own. I like to think I'm not the only one going through intense moments, so why not defuse them together?",
+        "Because, really, you don't need the adjective «hyper» to be sensitive. Nor a pair of breasts, for that matter.",
+        "I've heard that the suicide rate among men is three times higher than among women, partly because, as children, they're taught not to open up.",
+        "So, will you have a dash of indignant anger, or a pinch of empathetic sadness?"
+      ],
+      "links": {
+        "anxiety": {
+          "label": "Anxiety",
+          "href": "https://radiobascule.ch/57/episode/323"
+        },
+        "euphoricJoy": {
+          "label": "Euphoric joy",
+          "href": "https://radiobascule.ch/midi-bascule/11-chronique-de-marie-eve-la-joie-euphorique/243"
+        }
+      }
+    },
+    "gallery": {
+      "alt1": "Marie-Eve Musy and Vivien Hochstätter in dégenre",
+      "alt2": "Marie-Eve Musy performing in dégenre",
+      "alt3": "Marie-Eve Musy and Vivien Hochstätter in a duo scene from dégenre",
+      "alt4": "A scene from the show dégenre",
+      "alt5": "Marie-Eve Musy in the show dégenre",
+      "alt6": "Marie-Eve Musy performing dégenre",
+      "alt7": "Marie-Eve Musy and Vivien Hochstätter on stage in dégenre"
+    }
   },
   "ActingPage": {
-    "title": "Acting"
+    "title": "Acting",
+    "heroAlt": "Marie-Eve Musy, actress, outdoors",
+    "lead": "Film, TV and web series, theatre & short films — I've worked in Switzerland and across Europe.",
+    "intro": "I enjoy performing on stage as much as on a film set. Both approaches have their own qualities that interest me. My choices are mostly guided by the people behind a project and the role I get to play.",
+    "gallery": {
+      "degenre": {
+        "alt": "Marie-Eve Musy in dégenre, on stage with Vivien Hochstätter",
+        "title": "dégenre",
+        "credit": "Jorge de Silva"
+      },
+      "myrtille1": {
+        "alt": "Marie-Eve Musy in the short film Myrtille",
+        "title": "Myrtille",
+        "credit": "Brigitte Besson"
+      },
+      "miTemps1": {
+        "alt": "Marie-Eve Musy in the film Mi-temps",
+        "title": "Mi-temps",
+        "credit": "Jorge de Silva"
+      },
+      "laMere1": {
+        "alt": "Marie-Eve Musy in the play La mère",
+        "title": "La mère",
+        "credit": "Rebecca Bowring"
+      },
+      "bobEtLesSexPistaches1": {
+        "alt": "Marie-Eve Musy in the film Bob et Les Sex Pistaches",
+        "title": "Bob et Les Sex Pistaches",
+        "credit": "Jade de Lavareille"
+      },
+      "myrtille2": {
+        "alt": "Marie-Eve Musy in the short film Myrtille, second still",
+        "title": "Myrtille",
+        "credit": "Brigitte Besson"
+      },
+      "miTemps2": {
+        "alt": "Marie-Eve Musy in the film Mi-temps, second still",
+        "title": "Mi-temps",
+        "credit": "Jorge de Silva"
+      },
+      "lesTroisSoeurs": {
+        "alt": "Marie-Eve Musy in the play Les trois sœurs",
+        "title": "Les trois sœurs",
+        "credit": "Patou Uhlmann"
+      },
+      "bobEtLesSexPistaches2": {
+        "alt": "Marie-Eve Musy in the film Bob et Les Sex Pistaches, second still",
+        "title": "Bob et Les Sex Pistaches",
+        "credit": "Jade de Lavareille"
+      },
+      "laMere2": {
+        "alt": "Marie-Eve Musy in the play La mère, second still",
+        "title": "La mère",
+        "credit": "Rebecca Bowring"
+      },
+      "breakUps": {
+        "alt": "Marie-Eve Musy in the film Break ups",
+        "title": "Break ups",
+        "credit": "Romain Graff"
+      },
+      "miTemps3": {
+        "alt": "Marie-Eve Musy in the film Mi-temps, third still",
+        "title": "Mi-temps",
+        "credit": "Jorge de Silva"
+      },
+      "myrtille3": {
+        "alt": "Marie-Eve Musy in the short film Myrtille, third still",
+        "title": "Myrtille",
+        "credit": "Brigitte Besson"
+      },
+      "iSwear1": {
+        "alt": "Marie-Eve Musy in the short film I swear",
+        "title": "I swear",
+        "credit": "François Hirschi"
+      },
+      "iSwear2": {
+        "alt": "Marie-Eve Musy in the short film I swear, second still",
+        "title": "I swear",
+        "credit": "François Hirschi"
+      },
+      "myrtille4": {
+        "alt": "Marie-Eve Musy in the short film Myrtille, fourth still",
+        "title": "Myrtille",
+        "credit": "Brigitte Besson"
+      }
+    },
+    "callout": {
+      "text": "You'll find the list of projects I've taken part in, along with videos, here.",
+      "ctaLabel": "See the full list",
+      "ctaHref": "https://www.comedien.ch/comediens/marie-eve-musy/"
+    }
   }
 }
