@@ -81,7 +81,7 @@ export default async function ActingPage({ params }: { params: Promise<{ locale:
         <IntroBand text={t("lead")} titleClassName="text-brand-blue-muted" />
 
         <section className="max-w-page mx-auto px-8 pb-12">
-          <p className="nav:max-w-208.75 text-lg leading-6 text-white">{t("intro")}</p>
+          <p className="text-lg leading-6 text-white lg:max-w-208.75">{t("intro")}</p>
         </section>
 
         <section className="max-w-page mx-auto px-8 pb-12">

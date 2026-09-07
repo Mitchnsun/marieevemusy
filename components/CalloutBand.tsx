@@ -36,7 +36,7 @@ export default function CalloutBand({
           <div className="absolute inset-0 bg-neutral-900/50" />
         </>
       ) : null}
-      <div className="nav:flex-row nav:items-center nav:gap-9 max-w-page relative mx-auto flex flex-col items-start gap-6 px-8 py-12">
+      <div className="max-w-page relative mx-auto flex flex-col items-start gap-6 px-8 py-12 lg:flex-row lg:items-center lg:gap-9">
         <div className="flex-1">
           {title ? (
             <>

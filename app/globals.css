@@ -18,9 +18,20 @@
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 
-  /* Matches the desktop/mobile nav breakpoint on marieevemusy.com. */
-  --breakpoint-nav: 960px;
-
-  /* Largeur maximale du contenu, alignée sur marieevemusy.com. */
+  /* Largeur maximale du contenu */
   --container-page: 1645px;
+
+  /* Animation d'entrée « bottom to top » des titres */
+  --animate-title-reveal: title-reveal 1s ease both;
+
+  @keyframes title-reveal {
+    from {
+      transform: translate3d(0, 100px, 0);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
 }

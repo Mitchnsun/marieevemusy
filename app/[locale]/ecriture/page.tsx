@@ -42,7 +42,7 @@ export default async function EcriturePage({ params }: { params: Promise<{ local
       <IntroBand text={t("lead")} />
 
       <section className="max-w-page mx-auto px-8">
-        <p className="text-brand-gray-900 nav:max-w-208.75 text-lg leading-6">{t("intro")}</p>
+        <p className="text-brand-gray-900 text-lg leading-6 lg:max-w-208.75">{t("intro")}</p>
       </section>
 
       {/*

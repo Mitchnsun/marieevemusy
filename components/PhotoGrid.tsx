@@ -14,15 +14,15 @@ type PhotoGridProps = {
 
 export default function PhotoGrid({ items }: PhotoGridProps) {
   return (
-    <ul className="nav:columns-4 nav:gap-6 columns-2 gap-4 min-[768px]:columns-3">
+    <ul className="columns-2 gap-4 md:columns-3 lg:columns-4 lg:gap-6">
       {items.map(({ src, alt, title, credit }, index) => (
-        <li key={`${title}-${index}`} className="nav:mb-6 mb-4 break-inside-avoid">
+        <li key={`${title}-${index}`} className="mb-4 break-inside-avoid lg:mb-6">
           <figure className="relative overflow-hidden">
             <GalleryImage
               src={src}
               alt={alt}
               className="h-auto"
-              sizes="(min-width: 960px) 400px, (min-width: 768px) 33vw, 50vw"
+              sizes="(min-width: 1024px) 400px, (min-width: 768px) 33vw, 50vw"
             />
             <figcaption className="bg-brand-navy/70 absolute inset-x-0 bottom-0 px-2 py-1.5 text-xs leading-tight text-white backdrop-blur-sm">
               {title} © {credit}

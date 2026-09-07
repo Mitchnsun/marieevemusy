@@ -32,7 +32,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} />
+      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} align="right" />
 
       <IntroBand text={t("intro")} className="bg-brand-blue-muted" />
 

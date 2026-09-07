@@ -53,7 +53,7 @@ export default function Nav() {
         aria-label="Navigation principale"
         className="max-w-page relative z-50 mx-auto flex h-20 items-center justify-end px-9"
       >
-        <ul className="nav:flex hidden items-center gap-1">
+        <ul className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map(({ href, key }) => {
             const isCurrent = isCurrentPath(pathname, href);
             return (
@@ -76,7 +76,7 @@ export default function Nav() {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           onClick={() => setIsMenuOpen((open) => !open)}
-          className="nav:hidden relative flex h-6 w-6 flex-col items-center justify-center gap-1.5"
+          className="relative flex h-6 w-6 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span className={cn(BAR_CLASSES, "transition-transform", { "translate-y-2 rotate-45": isMenuOpen })} />
           <span className={cn(BAR_CLASSES, "transition-opacity", { "opacity-0": isMenuOpen })} />
@@ -90,7 +90,7 @@ export default function Nav() {
         aria-modal="true"
         aria-label="Menu"
         hidden={!isMenuOpen}
-        className="nav:hidden bg-brand-gray-50 fixed inset-0 z-40 flex flex-col items-end justify-center gap-8 px-9"
+        className="bg-brand-gray-50 fixed inset-0 z-40 flex flex-col items-end justify-center gap-8 px-9 lg:hidden"
       >
         {NAV_LINKS.map(({ href, key }) => {
           const isCurrent = isCurrentPath(pathname, href);
