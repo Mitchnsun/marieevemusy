@@ -48,7 +48,7 @@ export default function Nav() {
   }, [isMenuOpen]);
 
   return (
-    <header ref={headerRef} className="absolute inset-x-0 top-0 z-50">
+    <header ref={headerRef} data-component="Nav" className="absolute inset-x-0 top-0 z-50">
       <nav
         aria-label="Navigation principale"
         className="max-w-page relative z-50 mx-auto flex h-20 items-center justify-end px-9"

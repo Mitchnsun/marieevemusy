@@ -34,7 +34,7 @@ export default function ButtonLink({
 
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+      <a data-component="ButtonLink" href={href} target="_blank" rel="noopener noreferrer" className={classes}>
         {children}
       </a>
     );
@@ -45,7 +45,7 @@ export default function ButtonLink({
   }
 
   return (
-    <Link href={href as Parameters<typeof Link>[0]["href"]} className={classes}>
+    <Link data-component="ButtonLink" href={href as Parameters<typeof Link>[0]["href"]} className={classes}>
       {children}
     </Link>
   );

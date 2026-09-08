@@ -20,6 +20,14 @@
     "fr": "Français",
     "en": "Anglais"
   },
+  "Gallery": {
+    "label": "Galerie photo",
+    "openImage": "Agrandir l’image : {alt}",
+    "close": "Fermer",
+    "previous": "Image précédente",
+    "next": "Image suivante",
+    "dialogTitle": "Galerie photo — image {current} sur {total}"
+  },
   "HomePage": {
     "title": "Marie-Eve Musy",
     "heroAlt": "Marie-Eve Musy, journaliste et présentatrice",

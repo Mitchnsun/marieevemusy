@@ -29,7 +29,7 @@ export default function ShowSection({
   children,
 }: ShowSectionProps) {
   return (
-    <section className="max-w-page mx-auto px-8 py-12 lg:py-36">
+    <section data-component="ShowSection" className="max-w-page mx-auto px-8 py-12 lg:py-36">
       <div className={cn("gap-18", image ? "grid lg:grid-cols-[835fr_533fr] lg:items-start" : "lg:max-w-208.75")}>
         <div className={cn({ "order-2 lg:order-1": image })}>
           {title ? <h2 className="text-brand-teal text-4xl leading-10.5 font-normal">{title}</h2> : null}

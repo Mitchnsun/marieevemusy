@@ -10,6 +10,13 @@ type GalleryImageProps = {
 
 export default function GalleryImage({ src, alt, className, sizes }: GalleryImageProps) {
   return (
-    <Image src={src} alt={alt} placeholder="blur" className={cn("w-full object-cover", className)} sizes={sizes} />
+    <Image
+      data-component="GalleryImage"
+      src={src}
+      alt={alt}
+      placeholder="blur"
+      className={cn("w-full object-cover", className)}
+      sizes={sizes}
+    />
   );
 }

@@ -10,7 +10,7 @@ type HeroProps = {
 
 export default function Hero({ image, imageAlt, title, align = "left" }: HeroProps) {
   return (
-    <section className="relative h-screen">
+    <section data-component="Hero" className="relative h-screen">
       <Image
         src={image}
         alt={imageAlt}

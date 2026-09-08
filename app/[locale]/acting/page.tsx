@@ -74,8 +74,8 @@ export default async function ActingPage({ params }: { params: Promise<{ locale:
       <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} />
 
       {/*
-       * TODO(#5): the live site opens each gallery photo in a lightbox on click —
-       * deliberately not implemented here, along with the scroll-in animations.
+       * TODO(#3): the live site plays a scroll-in animation on this section's content —
+       * deliberately not implemented here, same as biographie/page.tsx and ecriture/page.tsx.
        */}
       <div className="bg-brand-navy">
         <IntroBand text={t("lead")} titleClassName="text-brand-blue-muted" />

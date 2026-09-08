@@ -24,9 +24,12 @@ Résultat concret :
 
 **Le fichier image ne finit pas dans le bundle JavaScript.** Next l'extrait en asset statique
 (`.next/static/media/<nom>.<hash>.<ext>`) et remplace l'import par un petit objet
-`{ src, width, height, blurDataURL }` — quelques centaines d'octets. Nos pages et composants
-(`Hero`, `ShowSection`, `MediaGallery`) sont des Server Components, donc même cet objet reste
-côté serveur : seul le HTML/RSC rendu part vers le client.
+`{ src, width, height, blurDataURL }` — quelques centaines d'octets. Pour un composant Server
+(`Hero`, `ShowSection`) cet objet reste même côté serveur : seul le HTML/RSC rendu part vers le
+client. `MediaGallery` et `PhotoGrid` sont en revanche des Client Components (carrousel/lightbox
+interactifs) : leur objet `StaticImageData` traverse le payload RSC jusqu'au client — toujours
+quelques centaines d'octets, mais plus « gratuit » que pour un Server Component. Le fichier image
+lui-même reste dans tous les cas un asset statique, jamais dans le bundle JS.
 
 Le seul cas où l'import statique n'est pas possible est un nom de fichier dynamique (ex. généré
 depuis un CMS) — voir la section [Images sans import statique](#images-sans-import-statique).

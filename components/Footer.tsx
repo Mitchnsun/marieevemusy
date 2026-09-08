@@ -46,7 +46,7 @@ export default async function Footer() {
   const t = await getTranslations("Footer");
 
   return (
-    <footer className="bg-brand-navy text-white">
+    <footer data-component="Footer" className="bg-brand-navy text-white">
       <div className="max-w-page mx-auto flex flex-wrap items-center justify-between gap-6 px-8 py-10">
         <div className="flex items-center gap-6">
           <p className="font-semibold">Marie-Eve Musy</p>

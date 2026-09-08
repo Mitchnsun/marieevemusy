@@ -29,7 +29,7 @@ export default function CalloutBand({
   const { textColorClass, buttonVariant } = variantStyles[variant];
 
   return (
-    <section className={cn("relative", { "bg-brand-teal": variant === "teal" })}>
+    <section data-component="CalloutBand" className={cn("relative", { "bg-brand-teal": variant === "teal" })}>
       {image ? (
         <>
           <Image src={image} alt={imageAlt} fill placeholder="blur" sizes="100vw" className="object-cover" />
