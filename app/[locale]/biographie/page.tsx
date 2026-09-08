@@ -28,7 +28,7 @@ export default async function BiographiePage({ params }: { params: Promise<{ loc
 
   return (
     <>
-      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} />
+      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} objectPosition="center" />
 
       <IntroBand text={t("lead")} className="bg-brand-blue-muted" />
 

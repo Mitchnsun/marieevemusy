@@ -89,10 +89,14 @@ export default function Nav() {
         role="dialog"
         aria-modal="true"
         aria-label="Menu"
-        hidden={!isMenuOpen}
-        className="bg-brand-gray-50 fixed inset-0 z-40 flex flex-col items-end justify-center gap-8 px-9 lg:hidden"
+        inert={!isMenuOpen}
+        className={cn(
+          "bg-brand-gray-50 fixed inset-0 z-40 flex flex-col items-end justify-center gap-8 px-9 lg:hidden",
+          "transition-transform duration-300 ease-out motion-reduce:transition-none",
+          { "-translate-y-full": !isMenuOpen }
+        )}
       >
-        {NAV_LINKS.map(({ href, key }) => {
+        {NAV_LINKS.map(({ href, key }, index) => {
           const isCurrent = isCurrentPath(pathname, href);
           return (
             <Link
@@ -100,9 +104,13 @@ export default function Nav() {
               href={href}
               aria-current={isCurrent ? "page" : undefined}
               onClick={() => setIsMenuOpen(false)}
-              className={cn(LINK_CLASSES, "text-brand-gray-900 hover:text-brand-gray-900/50", {
-                "text-brand-gray-900/50": isCurrent,
-              })}
+              style={{ transitionDelay: isMenuOpen ? `${250 + index * 70}ms` : "0ms" }}
+              className={cn(
+                LINK_CLASSES,
+                "text-brand-gray-900 hover:text-brand-gray-900/50",
+                "transition-[color,opacity,transform] duration-300 ease-out motion-reduce:transition-none",
+                { "translate-y-3 opacity-0": !isMenuOpen, "text-brand-gray-900/50": isCurrent }
+              )}
             >
               {t(key)}
             </Link>

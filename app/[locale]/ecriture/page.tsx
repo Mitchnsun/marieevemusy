@@ -37,7 +37,7 @@ export default async function EcriturePage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} />
+      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} objectPosition="center" />
 
       <IntroBand text={t("lead")} />
 
