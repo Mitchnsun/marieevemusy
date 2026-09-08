@@ -1,6 +1,6 @@
 import "../globals.css";
 
-import ContactCta from "@components/ContactCta";
+import Footer from "@components/Footer";
 import Nav from "@components/Nav";
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
@@ -59,7 +59,7 @@ export default async function RootLayout({
           <main id="main-content" className="flex-1">
             {children}
           </main>
-          <ContactCta />
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

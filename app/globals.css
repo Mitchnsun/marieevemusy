@@ -7,6 +7,7 @@
 
 @theme {
   --color-brand-teal: #124c5d;
+  --color-brand-teal-light: #5390a2;
   --color-brand-blue-light: #e2ebff;
   --color-brand-navy: #081f31;
   --color-brand-blue-muted: #bbd2e0;
@@ -17,6 +18,52 @@
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 
-  /* Matches the desktop/mobile nav breakpoint on marieevemusy.com. */
-  --breakpoint-nav: 960px;
+  /* Max content width */
+  --container-page: 1645px;
+
+  /* Max width for full-width blocks (carousels), wider than --container-page */
+  --container-wide: 2048px;
+
+  /* Matching breakpoint, for responsive variants past the page container */
+  --breakpoint-3xl: 2048px;
+
+  /* Bottom-to-top entrance animation for headings */
+  --animate-title-reveal: title-reveal 1s ease both;
+
+  /* Open/close fade + zoom for the shadcn Dialog (lightbox) */
+  --animate-overlay-in: overlay-fade 0.2s ease-out both;
+  --animate-overlay-out: overlay-fade 0.2s ease-in reverse both;
+  --animate-dialog-in: dialog-zoom 0.2s ease-out both;
+  --animate-dialog-out: dialog-zoom 0.2s ease-in reverse both;
+
+  @keyframes title-reveal {
+    from {
+      transform: translate3d(0, 100px, 0);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes overlay-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes dialog-zoom {
+    from {
+      transform: translate(-50%, -50%) scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
 }

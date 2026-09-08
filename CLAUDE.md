@@ -34,6 +34,8 @@ Requires Node 24+ (`.nvmrc` pins `24.20.0`) and Yarn 4.18.0 (`nodeLinker: node-m
 - Tailwind CSS 4 via PostCSS, with **no `tailwind.config.*` file**: `app/globals.css` is just `@import "tailwindcss"`. Theme customization goes in that CSS file (Tailwind 4's CSS-first config), not a JS config.
 - `@/*` path alias resolves to the repo root (there is no `src/` directory); `@components/*` resolves to `components/` (shared components live outside `app/`, not in `app/components/`); `@utils/*` resolves to `utils/`.
 - Conditional/merged Tailwind classes go through `cn()` (`utils/cn.ts`, clsx + tailwind-merge) — never raw template-literal string concatenation. Prefer clsx's object form for conditional classes, e.g. `cn(BASE_CLASSES, { "text-brand-gray-900/50": isCurrent })`, not `isCurrent && "text-brand-gray-900/50"`. One util per file under `utils/`, named after the util (no catch-all `utils.ts`).
+- shadcn/ui is set up via a hand-written `components.json` (`cssVariables: false`, `utils` alias pointing at `@utils/cn`) — this project has no oklch design-token system and no dark mode, and reuses the existing `utils/cn.ts`. **Never run `npx shadcn@latest init`**, it would overwrite this. Adding a component (`npx shadcn@latest add <name>`) drops files into `components/ui/` in shadcn's own lowercase naming (an intentional exception to the PascalCase component-file rule, kept so the CLI can still update them); after adding one, check `git diff app/globals.css` is empty, strip any `dark:` variant classes (unsupported here), replace `animate-in`/`fade-in-0`/`zoom-in-95`-style classes with a custom `@theme` keyframe (see the `--animate-dialog-*`/`--animate-overlay-*` tokens in `app/globals.css` for the pattern — `tailwindcss-animate`/`tw-animate-css` are not installed), and run `yarn lint:fix`.
+- Every component under `components/` (excluding shadcn primitives in `components/ui/`, which use their own `data-slot` convention) carries a `data-component="<ComponentName>"` attribute on the outermost DOM element it renders — e.g. `<section data-component="Hero" ...>`. When a component has no single wrapping element (a fragment, a conditional root), put it on its main visible root instead.
 
 ## Conventions enforced by tooling
 
@@ -57,3 +59,13 @@ Static assets live in `public/`. Use `next/image` for images with meaningful alt
 ## Known gotcha
 
 `next.config.ts` configures a Turbopack rule loading `@svgr/webpack` for `*.svg` imports, but `@svgr/webpack` is **not** listed in `package.json` and is not installed. Importing an SVG as a React component will fail as-is — either add the dependency or serve SVGs from `public/` via `next/image`/`<img>` instead.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

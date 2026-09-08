@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
   const t = useTranslations("LanguageSwitcher");
 
   return (
-    <nav aria-label={t("label")} className="flex items-center gap-2">
+    <nav data-component="LanguageSwitcher" aria-label={t("label")} className="flex items-center gap-2">
       {routing.locales.map((availableLocale) => {
         const isCurrent = availableLocale === locale;
         return (
