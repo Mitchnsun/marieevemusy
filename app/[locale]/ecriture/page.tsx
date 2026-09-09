@@ -2,11 +2,14 @@ import ButtonLink from "@components/ButtonLink";
 import ContactCta from "@components/ContactCta";
 import Hero from "@components/Hero";
 import IntroBand from "@components/IntroBand";
+import JsonLd from "@components/JsonLd";
 import MediaGallery from "@components/MediaGallery";
 import ShowSection from "@components/ShowSection";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { getPathname } from "@/i18n/navigation";
+import { buildPageMetadata, SITE_NAME } from "@/i18n/pageMetadata";
 import galerie1 from "@/public/images/ecriture/marie-eve-musy-degenre-galerie-1.jpg";
 import galerie2 from "@/public/images/ecriture/marie-eve-musy-degenre-galerie-2.jpg";
 import galerie3 from "@/public/images/ecriture/marie-eve-musy-degenre-galerie-3.jpg";
@@ -16,15 +19,18 @@ import galerie6 from "@/public/images/ecriture/marie-eve-musy-degenre-galerie-6.
 import galerie7 from "@/public/images/ecriture/marie-eve-musy-degenre-galerie-7.jpg";
 import coverImage from "@/public/images/ecriture/marie-eve-musy-degenre-livre-couverture.jpg";
 import heroImage from "@/public/images/ecriture/marie-eve-musy-degenre-spectacle-scene.jpg";
+import { SITE_URL } from "@/utils/siteUrl";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "EcriturePage" });
+  const t = await getTranslations({ locale, namespace: "EcriturePage.meta" });
 
-  return {
-    title: `${t("title")} — Marie-Eve Musy`,
-    description: t("lead"),
-  };
+  return buildPageMetadata({
+    locale,
+    pathname: "/ecriture",
+    title: t("title"),
+    description: t("description"),
+  });
 }
 
 export default async function EcriturePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -37,6 +43,18 @@ export default async function EcriturePage({ params }: { params: Promise<{ local
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: `${t("title")} — ${SITE_NAME}`,
+          url: `${SITE_URL}${getPathname({ href: "/ecriture", locale })}`,
+          inLanguage: locale,
+          description: t("lead"),
+          author: { "@type": "Person", name: SITE_NAME },
+        }}
+      />
+
       <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} objectPosition="center" />
 
       <IntroBand text={t("lead")} />

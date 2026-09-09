@@ -8,7 +8,10 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { getHtmlLang } from "@/i18n/localeTags";
+import { SITE_NAME } from "@/i18n/pageMetadata";
 import { routing } from "@/i18n/routing";
+import { SITE_URL } from "@/utils/siteUrl";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,10 +19,25 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+const DEFAULT_DESCRIPTION =
+  "Profil de Marie-Eve Musy, journaliste et comédienne à Genève. Présentatrice TV en Suisse: démos, parcours, prestations et prise de contact";
+
 export const metadata: Metadata = {
-  title: "Marie-Eve Musy",
-  description:
-    "Profil de Marie-Eve Musy, journaliste et comédienne à Genève. Présentatrice TV en Suisse: démos, parcours, prestations et prise de contact",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_NAME,
+  description: DEFAULT_DESCRIPTION,
+  openGraph: {
+    title: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
+    siteName: SITE_NAME,
+    locale: "fr_CH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
+  },
 };
 
 export const viewport: Viewport = {
@@ -46,7 +64,7 @@ export default async function RootLayout({
   const t = await getTranslations("Layout");
 
   return (
-    <html lang={locale} className={montserrat.variable}>
+    <html lang={getHtmlLang(locale)} className={montserrat.variable}>
       <body className="bg-brand-gray-50 text-brand-gray-900 relative flex min-h-screen flex-col antialiased">
         <NextIntlClientProvider>
           <a
