@@ -1,11 +1,11 @@
 import ContactCta from "@components/ContactCta";
 import Hero from "@components/Hero";
 import IntroBand from "@components/IntroBand";
-import JsonLd from "@components/JsonLd";
 import MediaGallery from "@components/MediaGallery";
 import ShowSection from "@components/ShowSection";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { JsonLdScript } from "next-seo";
 
 import { getPathname } from "@/i18n/navigation";
 import { buildPageMetadata, SITE_NAME } from "@/i18n/pageMetadata";
@@ -38,7 +38,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <JsonLd
+      <JsonLdScript
+        scriptKey="website-jsonld"
         data={{
           "@context": "https://schema.org",
           "@type": "WebSite",

@@ -2,10 +2,10 @@ import CalloutBand from "@components/CalloutBand";
 import ContactCta from "@components/ContactCta";
 import Hero from "@components/Hero";
 import IntroBand from "@components/IntroBand";
-import JsonLd from "@components/JsonLd";
 import PhotoGrid from "@components/PhotoGrid";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { JsonLdScript } from "next-seo";
 
 import { getPathname } from "@/i18n/navigation";
 import { buildPageMetadata, SITE_NAME } from "@/i18n/pageMetadata";
@@ -77,7 +77,8 @@ export default async function ActingPage({ params }: { params: Promise<{ locale:
 
   return (
     <>
-      <JsonLd
+      <JsonLdScript
+        scriptKey="webpage-jsonld"
         data={{
           "@context": "https://schema.org",
           "@type": "WebPage",

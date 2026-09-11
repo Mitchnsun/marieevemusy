@@ -2,11 +2,11 @@ import ButtonLink from "@components/ButtonLink";
 import ContactCta from "@components/ContactCta";
 import Hero from "@components/Hero";
 import IntroBand from "@components/IntroBand";
-import JsonLd from "@components/JsonLd";
 import MediaGallery from "@components/MediaGallery";
 import ShowSection from "@components/ShowSection";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { JsonLdScript } from "next-seo";
 
 import { getPathname } from "@/i18n/navigation";
 import { buildPageMetadata, SITE_NAME } from "@/i18n/pageMetadata";
@@ -43,7 +43,8 @@ export default async function EcriturePage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <JsonLd
+      <JsonLdScript
+        scriptKey="webpage-jsonld"
         data={{
           "@context": "https://schema.org",
           "@type": "WebPage",
