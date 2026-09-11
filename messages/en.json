@@ -30,6 +30,10 @@
   },
   "HomePage": {
     "title": "Marie-Eve Musy",
+    "meta": {
+      "title": "Marie-Eve Musy — Radio and TV Host in Geneva",
+      "description": "Marie-Eve Musy hosts Midi Bascule on Radio Vostok and Culture Mag’ on One TV and Radio Lac. Cultural journalist and radio host based in Geneva, Switzerland."
+    },
     "heroAlt": "Marie-Eve Musy, journalist and TV presenter",
     "intro": "I host two cultural radio shows. Beyond presenting, I also handle much of the production work (finding topics, defining the angle, choosing guests and reaching out to them).",
     "midiBascule": {
@@ -66,6 +70,10 @@
   },
   "BiographiePage": {
     "title": "Biography",
+    "meta": {
+      "title": "Biography — Marie-Eve Musy, Actress and Journalist in Geneva",
+      "description": "Actress, author and now journalist, Marie-Eve Musy was born and raised in Geneva. Trained at the Cours Florent, she works across film, TV and Swiss radio."
+    },
     "heroAlt": "Marie-Eve Musy in a Geneva metro corridor",
     "lead": "Actress, TV presenter, author and now journalist, I love exploring different fields. My career path has mostly been guided by discovery and new challenges.",
     "paragraphs": [
@@ -87,6 +95,10 @@
   },
   "EcriturePage": {
     "title": "Writing",
+    "meta": {
+      "title": "Writing — The Show dégenre and Columns by Marie-Eve Musy",
+      "description": "A grant recipient from the Swiss Authors' Society, Marie-Eve Musy wrote the show dégenre and writes psycho-humorous columns for Swiss radio in Geneva."
+    },
     "heroAlt": "Marie-Eve Musy on stage in the show dégenre",
     "lead": "As a recipient of a grant from the Swiss Authors' Society, I wrote the show dégenre in 2018. I cherish the freedom of tone that writing offers. I also use my pen to craft sketches and radio columns.",
     "intro": "In 2018, after more than fifteen years of bringing other people's stories to life, I wanted to write my own text — the show I dreamed of performing, which didn't yet exist. Using my pen gave me a freedom I cherish, and one I keep when writing my columns.",
@@ -183,6 +195,10 @@
   },
   "ActingPage": {
     "title": "Acting",
+    "meta": {
+      "title": "Acting — Marie-Eve Musy, Actress in Geneva",
+      "description": "Geneva-based actress trained at the Cours Florent, Marie-Eve Musy has performed in film, TV and theatre across Switzerland and Europe. See her photo gallery."
+    },
     "heroAlt": "Marie-Eve Musy, actress, outdoors",
     "lead": "Film, TV and web series, theatre & short films — I've worked in Switzerland and across Europe.",
     "intro": "I enjoy performing on stage as much as on a film set. Both approaches have their own qualities that interest me. My choices are mostly guided by the people behind a project and the role I get to play.",

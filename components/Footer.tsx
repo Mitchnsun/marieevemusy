@@ -1,7 +1,7 @@
 import LanguageSwitcher from "@components/LanguageSwitcher";
 import { getTranslations } from "next-intl/server";
 
-const SOCIAL_LINKS = [
+export const SOCIAL_LINKS = [
   { name: "Instagram", href: "https://www.instagram.com/maevemus/" },
   { name: "LinkedIn", href: "https://ch.linkedin.com/in/marie-eve-musy-77ba82101" },
   { name: "Facebook", href: "https://www.facebook.com/marieevemusypageofficielle/" },

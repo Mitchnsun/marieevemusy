@@ -5,7 +5,10 @@ import IntroBand from "@components/IntroBand";
 import PhotoGrid from "@components/PhotoGrid";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { JsonLdScript } from "next-seo";
 
+import { getPathname } from "@/i18n/navigation";
+import { buildPageMetadata, SITE_NAME } from "@/i18n/pageMetadata";
 import bobEtLesSexPistaches1 from "@/public/images/acting/marie-eve-musy-bob-et-les-sex-pistaches-1.jpg";
 import bobEtLesSexPistaches2 from "@/public/images/acting/marie-eve-musy-bob-et-les-sex-pistaches-2.jpg";
 import breakUps from "@/public/images/acting/marie-eve-musy-break-ups.jpg";
@@ -23,6 +26,7 @@ import myrtille1 from "@/public/images/acting/marie-eve-musy-myrtille-1.jpg";
 import myrtille2 from "@/public/images/acting/marie-eve-musy-myrtille-2.jpg";
 import myrtille3 from "@/public/images/acting/marie-eve-musy-myrtille-3.jpg";
 import myrtille4 from "@/public/images/acting/marie-eve-musy-myrtille-4.jpg";
+import { SITE_URL } from "@/utils/siteUrl";
 
 const GALLERY_IMAGES = [
   { key: "degenre", src: degenre },
@@ -47,12 +51,14 @@ type GalleryCaption = { alt: string; title: string; credit: string };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "ActingPage" });
+  const t = await getTranslations({ locale, namespace: "ActingPage.meta" });
 
-  return {
-    title: `${t("title")} — Marie-Eve Musy`,
-    description: t("lead"),
-  };
+  return buildPageMetadata({
+    locale,
+    pathname: "/acting",
+    title: t("title"),
+    description: t("description"),
+  });
 }
 
 export default async function ActingPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -71,6 +77,19 @@ export default async function ActingPage({ params }: { params: Promise<{ locale:
 
   return (
     <>
+      <JsonLdScript
+        scriptKey="webpage-jsonld"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: `${t("title")} — ${SITE_NAME}`,
+          url: `${SITE_URL}${getPathname({ href: "/acting", locale })}`,
+          inLanguage: locale,
+          description: t("lead"),
+          author: { "@type": "Person", name: SITE_NAME },
+        }}
+      />
+
       <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} />
 
       {/*

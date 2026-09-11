@@ -30,6 +30,10 @@
   },
   "HomePage": {
     "title": "Marie-Eve Musy",
+    "meta": {
+      "title": "Marie-Eve Musy — Journaliste et animatrice radio à Genève",
+      "description": "Marie-Eve Musy anime Midi Bascule sur Radio Vostok et Culture Mag’ sur One TV et Radio Lac. Journaliste culturelle et animatrice radio à Genève, en Suisse."
+    },
     "heroAlt": "Marie-Eve Musy, journaliste et présentatrice",
     "intro": "Je présente deux émissions culturelles radiophoniques. En plus de l’animation, je gère une grande partie de la production (recherche de sujets, définition de l’angle, choix des invité.e.s et prise de contact).",
     "midiBascule": {
@@ -66,6 +70,10 @@
   },
   "BiographiePage": {
     "title": "Biographie",
+    "meta": {
+      "title": "Biographie — Marie-Eve Musy, comédienne et journaliste à Genève",
+      "description": "Comédienne, autrice puis journaliste, Marie-Eve Musy est née à Genève. Formée aux Cours Florent, elle tourne pour le cinéma, la télévision et la radio suisse."
+    },
     "heroAlt": "Marie-Eve Musy dans un couloir du métro de Genève",
     "lead": "Comédienne, animatrice, autrice puis journaliste, j’aime explorer différents terrains. L’évolution de ma carrière est notamment guidée, par la découverte et les nouveaux challenges.",
     "paragraphs": [
@@ -87,6 +95,10 @@
   },
   "EcriturePage": {
     "title": "Écriture",
+    "meta": {
+      "title": "Écriture — Le spectacle dégenre et les chroniques de Marie-Eve Musy",
+      "description": "Lauréate d’une bourse de la Société Suisse des Auteurs, Marie-Eve Musy a écrit le spectacle dégenre et signe des chroniques radio psycho-humoristiques à Genève."
+    },
     "heroAlt": "Marie-Eve Musy en scène dans le spectacle dégenre",
     "lead": "Lauréate d’une bourse de la Société Suisse des Auteurs, j’ai écrit en 2018 le spectacle dégenre. Je chéris la liberté de ton qu’offre l’écriture. J’utilise ma plume également pour concevoir des sketchs et des chroniques radios.",
     "intro": "En 2018, après plus de quinze ans à donner vie aux histoires des autres, j’ai voulu écrire mon propre texte, celui du spectacle que je rêvais de jouer et qui n’existait pas. Utiliser ma plume m’a offert une liberté que je chéris et que je garde en rédigeant mes chroniques.",
@@ -153,6 +165,10 @@
   },
   "ActingPage": {
     "title": "Acting",
+    "meta": {
+      "title": "Acting — Marie-Eve Musy, comédienne à Genève",
+      "description": "Comédienne genevoise formée aux Cours Florent, Marie-Eve Musy a tourné pour le cinéma, la télévision et le théâtre en Suisse et en Europe. Galerie photo."
+    },
     "heroAlt": "Marie-Eve Musy, comédienne, en extérieur",
     "lead": "Cinéma, séries tv ou web, théâtre & courts-métrages, j’ai tourné en Suisse et en Europe.",
     "intro": "J’aime autant jouer sur scène que sur un plateau de tournage. Les deux approches ont des spécificités qui m’intéressent. Mes choix sont surtout guidés par les personnes porteuses du projet et le rôle à interpréter.",
