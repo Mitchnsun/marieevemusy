@@ -5,7 +5,10 @@ import MediaGallery from "@components/MediaGallery";
 import ShowSection from "@components/ShowSection";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { JsonLdScript } from "next-seo";
 
+import { getPathname } from "@/i18n/navigation";
+import { buildPageMetadata, SITE_NAME } from "@/i18n/pageMetadata";
 import cultureMagImage from "@/public/images/journalisme/marie-eve-musy-culture-mag-one-tv.jpg";
 import galerie1 from "@/public/images/journalisme/marie-eve-musy-journalisme-galerie-1.jpg";
 import galerie2 from "@/public/images/journalisme/marie-eve-musy-journalisme-galerie-2.jpg";
@@ -13,15 +16,18 @@ import galerie3 from "@/public/images/journalisme/marie-eve-musy-journalisme-gal
 import galerie4 from "@/public/images/journalisme/marie-eve-musy-journalisme-plateau.jpg";
 import midiBasculeImage from "@/public/images/journalisme/marie-eve-musy-midi-bascule-radio-vostok.jpg";
 import heroImage from "@/public/images/shared/marie-eve-musy-journaliste-geneve-portrait.jpg";
+import { SITE_URL } from "@/utils/siteUrl";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "HomePage" });
+  const t = await getTranslations({ locale, namespace: "HomePage.meta" });
 
-  return {
-    title: `${t("title")} — Journalisme`,
-    description: t("intro"),
-  };
+  return buildPageMetadata({
+    locale,
+    pathname: "/",
+    title: t("title"),
+    description: t("description"),
+  });
 }
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -32,6 +38,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
+      <JsonLdScript
+        scriptKey="website-jsonld"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: SITE_NAME,
+          url: `${SITE_URL}${getPathname({ href: "/", locale })}`,
+          inLanguage: locale,
+          description: t("meta.description"),
+        }}
+      />
+
       <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} align="right" />
 
       <IntroBand text={t("intro")} className="bg-brand-blue-muted" />

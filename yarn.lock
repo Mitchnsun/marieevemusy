@@ -5455,6 +5455,7 @@ __metadata:
     lucide-react: "npm:^1.41.0"
     next: "npm:16.3.4"
     next-intl: "npm:^4.14.2"
+    next-seo: "npm:^7.3.0"
     prettier: "npm:^3.9.6"
     prettier-plugin-tailwindcss: "npm:^0.8.1"
     radix-ui: "npm:^1.6.7"
@@ -5622,6 +5623,16 @@ __metadata:
     next: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
   checksum: 10c0/ceaed75d1b2d108114af05549157df0a2c6d60931614e969de87a763207907f045f274c576cc9a6fb8415e64fc05fbf1a73a604d0e51c761bcde747343bcb2c6
+  languageName: node
+  linkType: hard
+
+"next-seo@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "next-seo@npm:7.3.0"
+  peerDependencies:
+    next: ">=13.4.0"
+    react: ">=18.2.0"
+  checksum: 10c0/7340323e7b86ad35bcc9f8790a3bbe63b93558de747bf8b81e67492881cce9dc094e45664c990ed26bc3400b6b0bec59720356b0fef23da04838010c316e407a
   languageName: node
   linkType: hard
 

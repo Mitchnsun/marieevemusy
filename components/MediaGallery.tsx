@@ -1,7 +1,7 @@
 "use client";
 
-import GalleryImage from "@components/GalleryImage";
 import Lightbox from "@components/Lightbox";
+import LightboxTrigger from "@components/LightboxTrigger";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import type { StaticImageData } from "next/image";
@@ -53,22 +53,16 @@ export default function MediaGallery({ images }: MediaGalleryProps) {
         <CarouselContent className="-ml-9">
           {images.map(({ src, alt }, index) => (
             <CarouselItem key={alt} className="w-86.5 shrink-0 grow-0 basis-auto pl-9 lg:w-138.5">
-              <button
-                type="button"
-                onClick={(event) => {
-                  triggerRef.current = event.currentTarget;
+              <LightboxTrigger
+                src={src}
+                alt={alt}
+                className="h-48.75 lg:h-78"
+                sizes="(min-width: 1024px) 554px, 346px"
+                onOpen={(trigger) => {
+                  triggerRef.current = trigger;
                   setOpenIndex(index);
                 }}
-                aria-label={t("openImage", { alt })}
-                className="block w-full cursor-zoom-in"
-              >
-                <GalleryImage
-                  src={src}
-                  alt={alt}
-                  className="h-48.75 lg:h-78"
-                  sizes="(min-width: 1024px) 554px, 346px"
-                />
-              </button>
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
