@@ -41,6 +41,7 @@ export default async function EcriturePage({ params }: { params: Promise<{ local
   const tFooter = await getTranslations("Footer");
   const distribution = t.raw("degenre.distribution") as { role: string; name: string }[];
   const quotes = t.raw("degenre.quotes") as { text: string; author: string }[];
+  const chroniquesParagraphs = t.raw("chroniques.paragraphs") as string[];
 
   return (
     <>
@@ -66,11 +67,6 @@ export default async function EcriturePage({ params }: { params: Promise<{ local
           <p className="text-brand-gray-900 text-lg leading-6 lg:max-w-208.75">{t("intro")}</p>
         </section>
 
-        {/*
-         * TODO(#4): scroll-in animation on the titles and quotes, not implemented here.
-         * Also check whether the "Article du Courrier" PDF should be moved into public/
-         * instead of staying linked to the old site.
-         */}
         <ShowSection
           title={t("degenre.title")}
           lead={t("degenre.lead")}
@@ -112,20 +108,26 @@ export default async function EcriturePage({ params }: { params: Promise<{ local
           </div>
         </ShowSection>
 
-        <ShowSection
-          title={t("chroniques.title")}
-          lead={t("chroniques.lead")}
-          paragraphs={t.raw("chroniques.paragraphs") as string[]}
-        >
-          <div className="mt-9 flex flex-wrap gap-4">
-            <ButtonLink href={t("chroniques.links.anxiety.href")} external>
-              {t("chroniques.links.anxiety.label")}
-            </ButtonLink>
-            <ButtonLink href={t("chroniques.links.euphoricJoy.href")} external>
-              {t("chroniques.links.euphoricJoy.label")}
-            </ButtonLink>
+        <section className="bg-gray-100 px-8 py-12">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-brand-teal text-4xl leading-10.5 font-extrabold">{t("chroniques.title")}</h2>
+            <h3 className="text-brand-teal mt-6 text-2xl leading-7 font-semibold">{t("chroniques.lead")}</h3>
+            <div className="mt-3 h-px w-full bg-gray-200" />
+            {chroniquesParagraphs.map((paragraph) => (
+              <p key={paragraph} className="text-brand-gray-900 mt-4.5 text-lg leading-6">
+                {paragraph}
+              </p>
+            ))}
+            <div className="mt-9 flex flex-wrap gap-4">
+              <ButtonLink href={t("chroniques.links.anxiety.href")} external>
+                {t("chroniques.links.anxiety.label")}
+              </ButtonLink>
+              <ButtonLink href={t("chroniques.links.euphoricJoy.href")} external>
+                {t("chroniques.links.euphoricJoy.label")}
+              </ButtonLink>
+            </div>
           </div>
-        </ShowSection>
+        </section>
 
         <MediaGallery
           images={[

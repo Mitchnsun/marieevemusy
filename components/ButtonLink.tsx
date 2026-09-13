@@ -26,8 +26,8 @@ export default function ButtonLink({
   const classes = cn(
     BASE_CLASSES,
     {
-      "bg-brand-blue-light text-brand-teal": variant === "light",
-      "bg-brand-teal-light text-white": variant === "teal",
+      "bg-brand-teal text-brand-blue-light hover:bg-brand-teal/90": variant === "light",
+      "bg-brand-teal-light hover:bg-brand-teal-light/80 text-white": variant === "teal",
     },
     className
   );

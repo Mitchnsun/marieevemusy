@@ -75,6 +75,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           ctaHref={t("cultureMag.ctaHref")}
           image={cultureMagImage}
           imageAlt={t("cultureMag.imageAlt")}
+          imagePosition="left"
         />
 
         <MediaGallery
