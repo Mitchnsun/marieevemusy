@@ -2,6 +2,7 @@ import ContactCta from "@components/ContactCta";
 import Hero from "@components/Hero";
 import IntroBand from "@components/IntroBand";
 import MediaGallery from "@components/MediaGallery";
+import PageSurface from "@components/PageSurface";
 import ShowSection from "@components/ShowSection";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -50,41 +51,43 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         }}
       />
 
-      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} align="right" />
+      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} align="right" objectPosition="left-top" />
 
-      <IntroBand text={t("intro")} className="bg-brand-blue-muted" />
+      <PageSurface>
+        <IntroBand text={t("intro")} className="bg-brand-blue-muted" />
 
-      <ShowSection
-        title={t("midiBascule.title")}
-        lead={t("midiBascule.lead")}
-        paragraphs={t.raw("midiBascule.paragraphs") as string[]}
-        note={t("midiBascule.note")}
-        ctaLabel={t("midiBascule.ctaLabel")}
-        ctaHref={t("midiBascule.ctaHref")}
-        image={midiBasculeImage}
-        imageAlt={t("midiBascule.imageAlt")}
-      />
+        <ShowSection
+          title={t("midiBascule.title")}
+          lead={t("midiBascule.lead")}
+          paragraphs={t.raw("midiBascule.paragraphs") as string[]}
+          note={t("midiBascule.note")}
+          ctaLabel={t("midiBascule.ctaLabel")}
+          ctaHref={t("midiBascule.ctaHref")}
+          image={midiBasculeImage}
+          imageAlt={t("midiBascule.imageAlt")}
+        />
 
-      <ShowSection
-        title={t("cultureMag.title")}
-        lead={t("cultureMag.lead")}
-        paragraphs={t.raw("cultureMag.paragraphs") as string[]}
-        ctaLabel={t("cultureMag.ctaLabel")}
-        ctaHref={t("cultureMag.ctaHref")}
-        image={cultureMagImage}
-        imageAlt={t("cultureMag.imageAlt")}
-      />
+        <ShowSection
+          title={t("cultureMag.title")}
+          lead={t("cultureMag.lead")}
+          paragraphs={t.raw("cultureMag.paragraphs") as string[]}
+          ctaLabel={t("cultureMag.ctaLabel")}
+          ctaHref={t("cultureMag.ctaHref")}
+          image={cultureMagImage}
+          imageAlt={t("cultureMag.imageAlt")}
+        />
 
-      <MediaGallery
-        images={[
-          { src: galerie1, alt: t("gallery.alt1") },
-          { src: galerie2, alt: t("gallery.alt2") },
-          { src: galerie3, alt: t("gallery.alt3") },
-          { src: galerie4, alt: t("gallery.alt4") },
-        ]}
-      />
+        <MediaGallery
+          images={[
+            { src: galerie1, alt: t("gallery.alt1") },
+            { src: galerie2, alt: t("gallery.alt2") },
+            { src: galerie3, alt: t("gallery.alt3") },
+            { src: galerie4, alt: t("gallery.alt4") },
+          ]}
+        />
 
-      <ContactCta text={tFooter("contactCta")} />
+        <ContactCta text={tFooter("contactCta")} />
+      </PageSurface>
     </>
   );
 }
