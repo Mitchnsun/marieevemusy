@@ -33,6 +33,10 @@ type LightboxProps = {
 
 const NAV_BUTTON_CLASSES = "absolute top-1/2 z-10 -translate-y-1/2 rounded-full";
 
+// How far an image may be enlarged past its native resolution to better fill the lightbox,
+// e.g. on small source photos viewed on a large screen.
+const MAX_UPSCALE_FACTOR = 1.25;
+
 export default function Lightbox({ images, openIndex, onOpenChange, triggerRef }: LightboxProps) {
   const t = useTranslations("Gallery");
   const isOpen = openIndex !== null;
@@ -149,20 +153,37 @@ function LightboxCarousel({ images, startIndex }: LightboxCarouselProps) {
         opts={{ loop: total > 1, startIndex, align: "center", ...(prefersReducedMotion && { duration: 0 }) }}
         setApi={setApi}
         aria-label={t("label")}
-        className="my-auto w-full"
+        className="min-h-0 w-full flex-1"
       >
-        <CarouselContent className="ml-0" viewportClassName="overflow-visible">
+        <CarouselContent className="ml-0 h-full" viewportClassName="h-full overflow-visible">
           {images.map(({ src, alt, caption }, index) => (
-            <CarouselItem key={alt} className="flex flex-col items-center justify-center gap-4 px-2 lg:px-4">
-              <Image
-                src={src}
-                alt={alt}
-                placeholder="blur"
-                sizes="(min-width: 1024px) 90vw, 100vw"
-                loading={Math.abs(index - current) <= 1 ? "eager" : "lazy"}
-                className="max-h-[85vh] w-auto max-w-full cursor-default object-contain"
-              />
-              {caption && <p className="cursor-default text-center text-sm text-white/80">{caption}</p>}
+            <CarouselItem
+              key={alt}
+              className="flex h-full min-h-0 flex-col items-center justify-center gap-4 px-2 lg:px-4"
+            >
+              <div className="flex min-h-0 w-full flex-1 items-center justify-center">
+                <Image
+                  src={src}
+                  alt={alt}
+                  placeholder="blur"
+                  sizes="100vw"
+                  loading={Math.abs(index - current) <= 1 ? "eager" : "lazy"}
+                  // Explicit width/height (rather than `w-auto`/`h-auto`) are required here: with
+                  // both left to "auto", the browser derives the image's preferred size from the
+                  // `sizes`-driven responsive srcset selection, which under-reports the true
+                  // resolution on high-DPR screens — capping the render well below what `max-width`/
+                  // `max-height` would otherwise allow. Filling the wrapper (`h-full w-full`) and
+                  // capping each axis independently at `MAX_UPSCALE_FACTOR` × its native size
+                  // sidesteps that, while `object-contain` keeps the picture itself undistorted no
+                  // matter which axis ends up binding.
+                  style={{
+                    maxWidth: `${src.width * MAX_UPSCALE_FACTOR}px`,
+                    maxHeight: `${src.height * MAX_UPSCALE_FACTOR}px`,
+                  }}
+                  className="h-full w-full cursor-default object-contain"
+                />
+              </div>
+              {caption && <p className="shrink-0 cursor-default text-center text-sm text-white/80">{caption}</p>}
             </CarouselItem>
           ))}
         </CarouselContent>
