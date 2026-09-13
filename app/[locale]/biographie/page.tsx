@@ -58,10 +58,6 @@ export default async function BiographiePage({ params }: { params: Promise<{ loc
 
         <ShowSection paragraphs={t.raw("paragraphs") as string[]} image={portraitImage} imageAlt={t("portraitAlt")} />
 
-        {/*
-         * TODO(#3): the live site plays a scroll-in animation on the lead and paragraphs —
-         * deliberately omitted here.
-         */}
         <CalloutBand
           title={t("callout.title")}
           text={t("callout.text")}

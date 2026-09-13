@@ -94,10 +94,6 @@ export default async function ActingPage({ params }: { params: Promise<{ locale:
       <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} objectPosition="left-top" />
 
       <PageSurface>
-        {/*
-         * TODO(#3): the live site plays a scroll-in animation on this section's content —
-         * deliberately not implemented here, same as biographie/page.tsx and ecriture/page.tsx.
-         */}
         <div className="bg-brand-navy">
           <IntroBand text={t("lead")} titleClassName="text-brand-blue-muted" />
 
