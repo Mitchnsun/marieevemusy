@@ -17,7 +17,7 @@ Content priority order: professional demos (video showcases) → biography/parco
 - `yarn start` — run production build
 - `yarn lint` / `yarn lint:fix` — ESLint (flat config)
 - `yarn format` / `yarn format:check` — Prettier
-- `yarn type-check` — `tsc --noEmit`
+- `yarn type-check` — `next typegen && tsc --noEmit` (typegen regenerates typed routes/params before the TS check)
 - `yarn check` — `yarn lint && yarn type-check`, the pre-flight for any change
 
 There is no test runner configured — don't suggest `yarn test`. Before finishing a change, run `yarn check`.
@@ -50,7 +50,11 @@ These fail `yarn lint`, not just review, so treat them as hard requirements:
 
 ## Content & language
 
-Site copy, metadata, and `<html lang="fr">` are French, for a Swiss French-speaking audience — write user-facing text in French with correct French typography. Code, comments, and commit messages stay in English.
+The site is bilingual (fr/en) via `next-intl`, with `fr` as the default locale. Routing lives under `app/[locale]/...`; config is split across `i18n/routing.ts` (locales, default, `localePrefix: "as-needed"`, localized pathnames e.g. `/biographie` ↔ `/biography`), `i18n/navigation.ts` (locale-aware `Link`/`redirect`/`usePathname`/`useRouter`), `i18n/request.ts`, and `i18n/pageMetadata.ts` (hreflang alternates). Translated strings live in `messages/fr.json` and `messages/en.json`. `<LanguageSwitcher>` (`components/LanguageSwitcher.tsx`) handles the locale toggle in the UI.
+
+`<html lang>` is set dynamically per locale to `fr-CH`/`en-CH` (see `i18n/localeTags.ts`), not plain `fr`/`en` — this deliberately signals Swiss French/English rather than France French to search engines and social platforms.
+
+Write user-facing copy for the `fr` locale in French with correct French typography (for the Swiss French-speaking primary audience) and keep the `en` locale copy in sync. Code, comments, and commit messages stay in English.
 
 ## Media
 
@@ -59,6 +63,8 @@ Static assets live in `public/`. Use `next/image` for images with meaningful alt
 ## Known gotcha
 
 `next.config.ts` configures a Turbopack rule loading `@svgr/webpack` for `*.svg` imports, but `@svgr/webpack` is **not** listed in `package.json` and is not installed. Importing an SVG as a React component will fail as-is — either add the dependency or serve SVGs from `public/` via `next/image`/`<img>` instead.
+
+This Next version renamed `middleware.ts` to **`proxy.ts`** — the project's root-level `proxy.ts` (wiring up `next-intl`'s middleware for locale routing) lives there, not in `middleware.ts`.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

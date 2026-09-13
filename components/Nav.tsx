@@ -16,7 +16,7 @@ const NAV_LINKS = [
 const isCurrentPath = (pathname: string, href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
 const LINK_CLASSES =
-  "text-white hover:text-white/50 text-xl leading-5 font-semibold tracking-[1px] transition-colors duration-200";
+  "text-white/50 hover:text-white text-xl leading-5 font-semibold tracking-[1px] transition-colors duration-200";
 const BAR_CLASSES = "bg-white h-0.5 w-6 duration-200";
 
 export default function Nav() {
@@ -61,7 +61,7 @@ export default function Nav() {
                 <Link
                   href={href}
                   aria-current={isCurrent ? "page" : undefined}
-                  className={cn(LINK_CLASSES, "px-3.5", { "text-white/50": isCurrent })}
+                  className={cn(LINK_CLASSES, "px-3.5", { "text-white": isCurrent })}
                 >
                   {t(key)}
                 </Link>

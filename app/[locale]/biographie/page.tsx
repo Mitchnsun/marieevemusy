@@ -3,6 +3,7 @@ import ContactCta from "@components/ContactCta";
 import { SOCIAL_LINKS } from "@components/Footer";
 import Hero from "@components/Hero";
 import IntroBand from "@components/IntroBand";
+import PageSurface from "@components/PageSurface";
 import ShowSection from "@components/ShowSection";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -50,26 +51,24 @@ export default async function BiographiePage({ params }: { params: Promise<{ loc
         }}
       />
 
-      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} objectPosition="center" />
+      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} />
 
-      <IntroBand text={t("lead")} className="bg-brand-blue-muted" />
+      <PageSurface>
+        <IntroBand text={t("lead")} className="bg-brand-blue-muted" />
 
-      <ShowSection paragraphs={t.raw("paragraphs") as string[]} image={portraitImage} imageAlt={t("portraitAlt")} />
+        <ShowSection paragraphs={t.raw("paragraphs") as string[]} image={portraitImage} imageAlt={t("portraitAlt")} />
 
-      {/*
-       * TODO(#3): the live site plays a scroll-in animation on the lead and paragraphs, and a
-       * slight parallax on the hero portrait — animations deliberately omitted here.
-       */}
-      <CalloutBand
-        title={t("callout.title")}
-        text={t("callout.text")}
-        ctaLabel={t("callout.ctaLabel")}
-        ctaHref={t("callout.ctaHref")}
-        image={calloutImage}
-        imageAlt={t("callout.imageAlt")}
-      />
+        <CalloutBand
+          title={t("callout.title")}
+          text={t("callout.text")}
+          ctaLabel={t("callout.ctaLabel")}
+          ctaHref={t("callout.ctaHref")}
+          image={calloutImage}
+          imageAlt={t("callout.imageAlt")}
+        />
 
-      <ContactCta text={tFooter("contactCta")} />
+        <ContactCta text={tFooter("contactCta")} />
+      </PageSurface>
     </>
   );
 }

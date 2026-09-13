@@ -2,6 +2,7 @@ import CalloutBand from "@components/CalloutBand";
 import ContactCta from "@components/ContactCta";
 import Hero from "@components/Hero";
 import IntroBand from "@components/IntroBand";
+import PageSurface from "@components/PageSurface";
 import PhotoGrid from "@components/PhotoGrid";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -90,33 +91,31 @@ export default async function ActingPage({ params }: { params: Promise<{ locale:
         }}
       />
 
-      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} />
+      <Hero image={heroImage} imageAlt={t("heroAlt")} title={t("title")} objectPosition="left-top" />
 
-      {/*
-       * TODO(#3): the live site plays a scroll-in animation on this section's content —
-       * deliberately not implemented here, same as biographie/page.tsx and ecriture/page.tsx.
-       */}
-      <div className="bg-brand-navy">
-        <IntroBand text={t("lead")} titleClassName="text-brand-blue-muted" />
+      <PageSurface>
+        <div className="bg-brand-navy">
+          <IntroBand text={t("lead")} titleClassName="text-brand-blue-muted" />
 
-        <section className="max-w-page mx-auto px-8 pb-12">
-          <p className="text-lg leading-6 text-white lg:max-w-208.75">{t("intro")}</p>
-        </section>
+          <section className="max-w-page mx-auto px-8 pb-12">
+            <p className="text-lg leading-6 text-white lg:max-w-208.75">{t("intro")}</p>
+          </section>
 
-        <section className="max-w-page mx-auto px-8 pb-12">
-          <PhotoGrid items={items} />
-        </section>
-      </div>
+          <section className="max-w-page mx-auto px-8 pb-12">
+            <PhotoGrid items={items} />
+          </section>
+        </div>
 
-      <CalloutBand
-        text={t("callout.text")}
-        ctaLabel={t("callout.ctaLabel")}
-        ctaHref={t("callout.ctaHref")}
-        external
-        variant="teal"
-      />
+        <CalloutBand
+          text={t("callout.text")}
+          ctaLabel={t("callout.ctaLabel")}
+          ctaHref={t("callout.ctaHref")}
+          external
+          variant="teal"
+        />
 
-      <ContactCta text={tFooter("contactCta")} />
+        <ContactCta text={tFooter("contactCta")} />
+      </PageSurface>
     </>
   );
 }

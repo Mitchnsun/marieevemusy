@@ -1,34 +1,21 @@
+import HeroBackdrop from "@components/HeroBackdrop";
 import { cn } from "@utils/cn";
-import Image, { type StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 
 type HeroProps = {
   image: StaticImageData;
   imageAlt: string;
   title: string;
   align?: "left" | "right";
-  objectPosition?: "left" | "center";
+  objectPosition?: "top" | "left" | "center" | "left-top";
 };
 
-export default function Hero({ image, imageAlt, title, align = "left", objectPosition = "left" }: HeroProps) {
+export default function Hero({ image, imageAlt, title, align = "left", objectPosition = "top" }: HeroProps) {
   return (
     <section data-component="Hero" className="relative h-screen">
-      <Image
-        src={image}
-        alt={imageAlt}
-        fill
-        priority
-        placeholder="blur"
-        // object-cover on a full-height hero scales these 16:9 sources well past the
-        // viewport width on portrait phones, so the mobile slot exceeds 100vw on purpose.
-        sizes="(max-width: 1024px) 200vw, 100vw"
-        className={cn("object-cover", {
-          "object-left": objectPosition === "left",
-          "object-center": objectPosition === "center",
-        })}
-      />
-      <div className="absolute inset-0 bg-neutral-900/16" />
+      <HeroBackdrop image={image} imageAlt={imageAlt} objectPosition={objectPosition} />
       <div
-        className={cn("max-w-page relative mx-auto flex h-full items-center px-9", {
+        className={cn("max-w-page relative z-10 mx-auto flex h-full items-center px-9", {
           "justify-center lg:justify-end": align === "right",
           "justify-start": align === "left",
         })}
